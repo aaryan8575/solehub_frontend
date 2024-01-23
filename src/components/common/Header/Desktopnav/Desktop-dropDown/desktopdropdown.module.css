@@ -1,0 +1,28 @@
+.main{
+    @apply hidden lg:flex justify-between items-center;
+
+    .subdiv{
+        @apply relative inline-block;
+
+        .buttontag{
+            @apply flex w-full justify-center items-center text-caption1 font-semibold hover:text-primary focus:text-primary py-4;
+        }
+
+        .openMenuDiv{
+            @apply absolute right-0 z-10 w-56 origin-top-right border-t-2 border-primary rounded-b-md bg-floralWhite ring-1 ring-black ring-opacity-5 focus:outline-none;
+
+            .anchortag{
+                @apply  block px-4 py-2 text-caption1 focus:text-primary hover:text-primary;
+            }
+        }
+
+        .renderButton{
+            @apply flex w-full justify-center items-center text-caption1 font-semibold hover:text-primary py-4 ;
+
+            & > .link{
+                @apply flex w-full justify-center items-center text-caption1 font-semibold;
+            }
+        }
+
+    }
+}

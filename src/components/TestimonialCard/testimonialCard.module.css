@@ -1,0 +1,22 @@
+.testimonialCard {
+  @apply w-[90%] mx-auto flex flex-col justify-center items-center gap-4 pb-8 pt-16;
+
+  & > .testimonialDescription {
+    @apply text-center text-gray pt-1;
+  }
+
+  & > .testimonialWrapper {
+    @apply flex flex-col gap-2 items-center;
+
+    & > .testimonialPersonImage {
+      @apply w-20 aspect-square relative rounded-full overflow-hidden;
+    }
+
+    & > .testimonialPersonName {
+      @apply text-caption1 font-bold;
+    }
+    & > .testimonialPersonDesignation {
+      @apply text-caption1 text-gray;
+    }
+  }
+}
