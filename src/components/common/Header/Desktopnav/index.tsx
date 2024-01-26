@@ -24,7 +24,7 @@ const DesktopNav = ({ data }: { data: NavLinksType }) => {
           {/* <FleurvedaLogo className="w-20" /> */}
         </Link>
         <div className={style.icons}>
-          <SearchButton />
+          {/* <SearchButton /> */}
           <CartBtn />
           <AccountBtn />
         </div>

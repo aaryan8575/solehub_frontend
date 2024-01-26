@@ -1,5 +1,5 @@
 .footerWrapper {
-  @apply flex bg-skin relative pt-10;
+  @apply flex bg-white text-footblack relative pt-10;
 
   /* & .footerImageWrapper {
     @apply absolute right-0 top-0 min-w-[200px] w-[30%] max-w-[350px] aspect-square -translate-y-[40%] -translate-x-[10%];

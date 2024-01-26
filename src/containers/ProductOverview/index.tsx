@@ -21,7 +21,7 @@ const ProductOverview = ({ product, reviewData }: ProductTemplateProps) => {
   return (
     <>
       <ProductProvider product={product}>
-        <section className=" bg-floralWhite relative sm:mt-0 mt-4 grid md:grid-cols-2 items-start grid-cols-1 flex-1 gap-5 lg:gap-20">
+        <section className="relative sm:mt-0 mt-4 grid md:grid-cols-2 items-start grid-cols-1 flex-1 gap-5 lg:gap-20">
           <div className="h-max md:sticky top-[100px]">
             <div className="flex items-start justify-between md:hidden">
               <h3 className="font-bold mb-4">{product.title}</h3>

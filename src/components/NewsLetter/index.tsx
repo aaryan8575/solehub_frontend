@@ -32,12 +32,14 @@ const NewsLetter: React.FC = (props: Props) => {
   })
 
   return (
-    <section className="bg-skin">
-      <SectionHeader
-        heading="Our Newsletter"
-        desc="Get insider access for limited edition offers, new launches, insights on  Shoes, Lofers,
+    <section className="bg-footblack">
+      <div className="*:text-white">
+        <SectionHeader
+          heading="Our Newsletter"
+          desc="Get insider access for limited edition offers, new launches, insights on  Shoes, Lofers,
 Sliders and many more"
-      />
+        />
+      </div>
       <form className={styles.newsLetterForm} onSubmit={submit}>
         <div className="w-[50%] ">
           <Input

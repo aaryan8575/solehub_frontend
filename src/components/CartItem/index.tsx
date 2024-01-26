@@ -10,7 +10,7 @@ type Props = {
 
 const CartItem = ({ item }: Props) => {
   return (
-    <li className="grid grid-cols-[25%_1fr] max-sm:grid-cols-[40%_1fr] items-center bg-skin">
+    <div className="grid grid-cols-[25%_1fr] max-sm:grid-cols-[40%_1fr] py-2 items-center">
       <div className="overflow-hidden max-w-[150px] relative aspect-square">
         <Image
           src={item.thumbnail}
@@ -45,7 +45,7 @@ const CartItem = ({ item }: Props) => {
           ₹{Number((item?.unit_price * item.quantity) / 100).toFixed(2)}
         </span>
       </div>
-    </li>
+    </div>
 
     // <div className="grid grid-cols-[122px_1fr] gap-x-4">
     //   <div className="overflow-hidden rounded-md border max-w-[150px] relative border-gray/30 aspect-square">

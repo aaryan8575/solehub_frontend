@@ -7,7 +7,7 @@ type Props = {}
 
 const BlogCard = ({ data }: Props) => {
   return (
-    <div className="border-2 border-gold rounded-xl p-4 text-gray flex flex-col gap-4">
+    <div className="border-2 border-footblack rounded-xl p-4 text-gray flex flex-col gap-4">
       <div className="relative aspect-[16/9] flex justify-center ">
         <Image alt="img" src={data.image} fill />
       </div>
@@ -20,7 +20,10 @@ const BlogCard = ({ data }: Props) => {
       <p className="text-caption2 line-clamp-4">{data.desc}</p>
       <div className="flex items-center justify-between">
         <p className="text-btn">{data.time}</p>
-        <Link className="text-gold flex gap-2 items-center" href={data.link}>
+        <Link
+          className="text-footblack flex gap-2 items-center"
+          href={data.link}
+        >
           <span>Read More</span>
           <span>
             <Arrow />

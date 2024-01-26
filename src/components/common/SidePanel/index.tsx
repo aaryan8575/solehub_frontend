@@ -34,12 +34,12 @@ const SidePanel = ({ children, side = "left" }: Props) => {
             })}
           >
             <Dialog.Panel
-              className={clsx("pointer-events-auto w-screen ", {
+              className={clsx("pointer-events-auto w-screen", {
                 "max-w-2xl": ["left", "right"].includes(side),
                 "max-h-max": ["top", "bottom"].includes(side),
               })}
             >
-              <div className="flex flex-col bg-secondary h-screen shadow-xl overflow-y-auto no-scrollbar">
+              <div className="flex flex-col bg-white py-2 h-screen shadow-xl overflow-y-auto no-scrollbar">
                 <div className="flex items-center justify-between p-4 border-b border-gray">
                   <Dialog.Title className="text-heading6 font-medium text-gray-900">
                     Bag
@@ -52,11 +52,13 @@ const SidePanel = ({ children, side = "left" }: Props) => {
                     >
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Close panel button</span>
-                      <XMarkIcon className="h-8 w-8" aria-hidden />
+                      <XMarkIcon className="h-6 w-6 " aria-hidden />
                     </button>
                   </div>
                 </div>
-                <h6 className="px-4 pt-2">Your total item ({totalItems})</h6>
+                <h6 className="px-4 pt-2 text-subtitle1">
+                  Your total item ({totalItems})
+                </h6>
                 {children}
               </div>
             </Dialog.Panel>

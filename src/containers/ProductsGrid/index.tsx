@@ -27,7 +27,7 @@ const ProductsGrid = () => {
     : []
 
   return (
-    <section>
+    <section className="bg-white">
       {!pathname.includes("/products") && (
         <SectionHeader
           heading="Most Popular Products"

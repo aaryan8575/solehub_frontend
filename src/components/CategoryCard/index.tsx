@@ -6,7 +6,7 @@ const CategoryCard = () => {
   // Dummy data for demonstration
 
   return (
-    <section className="bg-secondary">
+    <section className="bg-footblack *:text-white">
       <SectionHeader
         heading="Categories"
         desc="Lorem ipsum dolor sit amet consectetur. Id mauris bibendum mauris maecenas libero etiam id sagittis."

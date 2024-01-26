@@ -23,7 +23,7 @@ const SearchButton = (props: Props) => {
         className="flex flex-col justify-center items-center"
       >
         <SearchIcon className="w-5" />
-        <p className="text-xs max-sm:hidden">Search</p>
+        <p className="text-xs text-footblack max-sm:hidden">Search</p>
       </div>
     </>
   )

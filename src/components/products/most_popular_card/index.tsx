@@ -23,7 +23,7 @@ const index = ({ product, color }) => {
           >
             <div className="flex justify-between items-center">
               {product?.discount.show ? (
-                <div className="block bg-gold px-4 rounded-r-full ">
+                <div className="block bg-footblack px-4 rounded-r-full ">
                   <p className="">{product.discount.percentage}% off</p>
                 </div>
               ) : (

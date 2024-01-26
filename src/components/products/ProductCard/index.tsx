@@ -31,7 +31,7 @@ const ProductCard = ({ product }: ProductTemplateProps) => {
     <div className="shadow-lg rounded-xl overflow-hidden bg-white">
       <div className="relative w-full aspect-[3/4]">
         <div className="z-10 absolute top-0 w-full flex justify-end items-center mb-2 mt-4">
-          {/* <div className="flex bg-gold px-4 rounded-r-full items-center">
+          {/* <div className="flex bg-footblack px-4 rounded-r-full items-center">
             <p className="">50 % off</p>
           </div> */}
           <div className="pr-5">

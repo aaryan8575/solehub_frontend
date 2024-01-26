@@ -13,7 +13,7 @@ export default function Cart() {
   return (
     <>
       {/* <Banner data={cartPageBanner} /> */}
-      <section className="grid  grid-cols-1 md:grid-cols-[1fr_40%] justify-center gap-14 bg-secondary">
+      <section className="grid grid-cols-1 md:grid-cols-[1fr_40%] justify-center gap-14">
         <CartItemList />
         <div className="flex flex-col gap-14 h-max sticky top-[100px]">
           <CartSummary />

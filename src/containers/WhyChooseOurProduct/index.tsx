@@ -8,14 +8,14 @@ type Props = {}
 
 const WhyChooseOurProduct = (props: Props) => {
   return (
-    <section className="bg-secondary flex flex-col gap-10 pb-0">
-      <div className="text-center">
+    <section className="flex flex-col gap-10 pb-0 bg-footblack">
+      <div className="text-center *:text-white">
         <SectionHeader
           heading="Why Choose Our Product"
           desc="Lorem ipsum dolor sit amet consectetur. Id mauris bibendum mauris maecenas libero etiam id sagittis."
         />
       </div>
-      <div className="flex gap-[2rem] lg:gap-[8rem] items-center max-md:flex-col">
+      <div className="flex gap-[2rem] lg:gap-[8rem] items-center max-md:flex-col *:text-white">
         <div className="flex flex-col gap-24 max-sm:gap-10">
           <div className="flex flex-col gap-2 items-center text-center">
             {/* <div className="bg-white p-4 rounded-full">
@@ -38,8 +38,8 @@ const WhyChooseOurProduct = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-center bg-skin rounded-t-full w-full">
-          <div className="flex w-full flex-col items-center text-center gap-4 pt-24 px-6">
+        <div className="flex flex-col items-center bg-cyan-200 rounded-t-full w-full">
+          <div className="flex w-full flex-col items-center *:text-footblack text-center gap-4 pt-24 px-6">
             <p className="text-subtitle2">Our Story</p>
             <p className="text-caption1">
               SoleHub began with a shared love for shoes and a vision to

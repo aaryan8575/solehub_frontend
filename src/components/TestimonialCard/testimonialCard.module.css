@@ -2,7 +2,7 @@
   @apply w-[90%] mx-auto flex flex-col justify-center items-center gap-4 pb-8 pt-16;
 
   & > .testimonialDescription {
-    @apply text-center text-gray pt-1;
+    @apply text-center text-offwhite pt-1;
   }
 
   & > .testimonialWrapper {

@@ -20,7 +20,7 @@ const AccountBtn = () => {
           <Menu.Button className="flex flex-col justify-center items-center">
             <span className="sr-only">user account button</span>
             <UserIcon className="w-5 h-5" />
-            <p className="text-xs max-sm:hidden">Account</p>
+            <p className="text-xs text-footblack max-sm:hidden">Account</p>
           </Menu.Button>
         </div>
         <Transition
@@ -37,7 +37,7 @@ const AccountBtn = () => {
               {({ active }) => (
                 <Link
                   href={"/account"}
-                  className={clsx("block px-4 py-2 ", {
+                  className={clsx("block px-4 py-2 text-footblack", {
                     "bg-gray/10": !!active,
                   })}
                 >
@@ -50,7 +50,7 @@ const AccountBtn = () => {
                 {({ active }) => (
                   <Link
                     href={"/account/wishlist"}
-                    className={clsx("block px-4 py-2 ", {
+                    className={clsx("block px-4 py-2 text-footblack", {
                       "bg-gray/10": !!active,
                     })}
                   >
@@ -95,7 +95,7 @@ const AccountBtn = () => {
         className="flex flex-col items-center justify-center"
       >
         <UserIcon className="w-5 h-5" />
-        <p className="text-xs max-sm:hidden">Account</p>
+        <p className="text-xs text-footblack max-sm:hidden">Account</p>
       </Link>
     )
   }

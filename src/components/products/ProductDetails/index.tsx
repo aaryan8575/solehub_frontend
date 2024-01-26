@@ -53,7 +53,7 @@ const ProductDetails = ({
                 return (
                   <span
                     key={value.id}
-                    className="border px-4 py-1 hover:bg-gold hover:border-gold hover:text-white"
+                    className="border px-4 py-1 hover:bg-footblack hover:border-footblack hover:text-white"
                   >
                     {value?.value}
                   </span>

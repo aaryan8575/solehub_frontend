@@ -6,7 +6,7 @@ const Cart = () => {
   return (
     <SidePanel side="right">
       <div className="flex-1 flex flex-col overflow-y-scroll no-scrollbar">
-        <div className="flow-root overflow-hidden overflow-y-auto flex-1 no-scrollbar py-2">
+        <div className="flow-root overflow-hidden overflow-y-auto flex-1 no-scrollbar py-2 px-4">
           <CartItemList />
         </div>
 

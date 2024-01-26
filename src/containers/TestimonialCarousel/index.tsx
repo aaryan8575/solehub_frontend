@@ -26,7 +26,7 @@ const TestimonialCarousel = (props: Props) => {
   }
 
   return (
-    <section className="px-container relative">
+    <section className="bg-white text-footblack px-container relative">
       <p className={styles.heading}>{testimonialData.heading}</p>
       <div className={styles.svg_bg}></div>
       <div className="relative overflow-visible ">
@@ -62,9 +62,9 @@ const TestimonialCarousel = (props: Props) => {
             <SwiperSlide
               key={item.id}
               className={clsx(
-                "bg-white rounded-3xl shadow-2xl relative swiper-custom-slide",
+                "bg-footblack text-white rounded-3xl shadow-white shadow-2xl relative swiper-custom-slide",
                 {
-                  "text-transparent bg-transparent": activeSlide !== i,
+                  "text-transparent bg-footblack": activeSlide !== i,
                 }
               )}
             >

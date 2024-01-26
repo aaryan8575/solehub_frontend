@@ -269,7 +269,7 @@ export const homePageBanner = [
   {
     id: 1,
     backgroundBannerImage: "/images/bannerImage2.jpg",
-    backgroundBannerImageMobile: "/images/bannerImageMobile.jpeg",
+    backgroundBannerImageMobile: "/images/bannerImageMobile.jpg",
     // heading: "Look withon your self and discover",
     // description:
     //   "It is a long established fact that a reader will be distracted by the readable content of a page when.",
@@ -279,7 +279,7 @@ export const homePageBanner = [
   {
     id: 2,
     backgroundBannerImage: "/images/bannerImage1.png",
-    backgroundBannerImageMobile: "/images/bannerImageMobile.jpeg",
+    backgroundBannerImageMobile: "/images/bannerImageMobile.jpg",
     // heading: "Look withon your self and discover",
     // description:
     //   "It is a long established fact that a reader will be distracted by the readable content of a page when.",
@@ -290,7 +290,7 @@ export const homePageBanner = [
   {
     id: 3,
     backgroundBannerImage: "/images/bannerImage3.jpg",
-    backgroundBannerImageMobile: "/images/bannerImageMobile.jpeg",
+    backgroundBannerImageMobile: "/images/bannerImageMobile.jpg",
     // heading: "Look withon your self and discover",
     // description:
     //   "It is a long established fact that a reader will be distracted by the readable content of a page when.",

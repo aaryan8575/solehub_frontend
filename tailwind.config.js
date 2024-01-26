@@ -18,9 +18,10 @@ module.exports = {
         // new coloes
         primary: "rgba(var(--color-primary)/ <alpha-value>)",
         secondary: "rgba(var(--color-secondary) / <alpha-value>)",
-        gold: "rgba(var(--color-gold) / <alpha-value>)",
+        footblack: "rgba(var(--color-footblack) / <alpha-value>)",
         floralWhite: "rgba(var(--color-floral-white) / <alpha-value>)",
         skin: "rgba(var(--color-skin) / <alpha-value>)",
+        // cyan: "rgba(var(--color-cyan) / <alpha-value>)",
 
         //  old colors
         green: {

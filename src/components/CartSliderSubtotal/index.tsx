@@ -20,11 +20,11 @@ const CartSliderSubtotal = (props: Props) => {
             as="a"
             variant="outlined"
             href="/account/wishlist"
-            className="w-full"
+            className="w-full hover:bg-secondary"
           >
             Add item from wishlist
           </Button>
-          <div className="flex justify-between items-center text-body2 font-semibold bg-white px-6 py-2 rounded-md">
+          <div className="flex justify-between items-center text-body2 font-semibold bg-secondary px-6 py-2 rounded-md">
             <span>Total</span>
             <span>
               {cart &&
@@ -41,13 +41,13 @@ const CartSliderSubtotal = (props: Props) => {
           </p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 px-2">
           <Button
             as="a"
             href="/products"
             variant="fill"
             color="primary"
-            className="w-full !rounded-none py-2"
+            className="w-full rounded-md py-2"
           >
             <span className="sr-only">Continue Shopping</span>
             Continue Shopping
@@ -57,7 +57,7 @@ const CartSliderSubtotal = (props: Props) => {
             href="/checkout"
             variant="fill"
             color="primary"
-            className="w-full !rounded-none py-2"
+            className="w-full rounded-md py-2"
           >
             Checkout
           </Button>
