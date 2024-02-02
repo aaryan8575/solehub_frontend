@@ -72,7 +72,7 @@ const OrderOverview = () => {
         const productHandle = varientHandleData?.find(
           (x) => x.variant_id === ci.variant_id
         )
-        return [...pi, { ...ci, handle: productHandle?          ++++?.handle }]
+        return [...pi, { ...ci, handle: productHandle?.handle }]
       }, [])
 
       return [...p, { ...c, items: newItems }]
