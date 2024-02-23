@@ -51,7 +51,7 @@ const Footer = (props: Props) => {
                   <p className="text-caption1">Drop a email</p>
                   <a
                     className="text-caption1"
-                    href="mailto:support@fleuraveda.com"
+                    href="mailto:support@solehub.com"
                   >
                     support@fleuraveda.com
                   </a>

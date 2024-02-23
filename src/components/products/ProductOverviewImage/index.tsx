@@ -46,6 +46,8 @@ const ProductOverviewImage = ({
   }
 
   const handleSlideChange = (swiper) => {
+    console.log(swiper.activeIndex)
+
     setCurrentIndex(swiper.activeIndex)
   }
 
@@ -76,12 +78,12 @@ const ProductOverviewImage = ({
         open={open}
         onClose={handleClosePopup}
         as="div"
-        className="fixed top-0 left-0 w-screen h-screen bg-black/40 backdrop-blur-sm z-50 p-4 animate-opacity"
+        className="fixed top-0 left-0 w-screen h-screen bg-black/40 backdrop-blur-sm z-50 p-4 animate-opacity flex items-center justify-center"
       >
-        <Dialog.Panel className="relative w-full max-w-3xl mx-auto h-full bg-white p-[4%] rounded-md">
-          <div className="absolute top-5 right-5 z-10">
+        <Dialog.Panel className="relative max-sm:w-full sm:h-full max-w-5xl mx-auto md:p-[4%] aspect-square">
+          <div className="absolute -top-0 -right-0 md:top-5 md:right-5 translate-x-1/2 -translate-y-1/2 z-10">
             <Button
-              variant="round"
+              variant="icon"
               onClick={handleClosePopup}
               className={"bg-white"}
             >
@@ -94,13 +96,15 @@ const ProductOverviewImage = ({
               spaceBetween={10}
               navigation={true}
               // thumbs={{ swiper: thumbsSwiper }}
+
               onSlideChange={handleSlideChange}
               navigation={{
                 prevEl: ".productPopupCarouselPrevBtn",
                 nextEl: ".productPopupCarouselNextBtn",
               }}
+              initialSlide={currentIndex || 0}
               modules={[FreeMode, Navigation, Thumbs]}
-              className="w-full h-full rounded-md flex justify-between"
+              className="w-full h-full rounded-md"
             >
               {productImagesData?.map((item, index) => {
                 return (
@@ -111,30 +115,31 @@ const ProductOverviewImage = ({
                       style={{ objectFit: "cover" }}
                       alt="productimage"
                       priority={true}
+                      sizes="100vw"
                     />
                   </SwiperSlide>
                 )
               })}
-              <button
-                type="button"
-                className="productPopupCarouselPrevBtn swiper-custom-navigation-btn  left-0 disabled:bg-gray/30 !bg-opacity-100 !text-white left-0 -translate-y-1/2"
-              >
-                <PrevIcon className="w-6 aspect-square" />
-                <span className="sr-only">Previous button</span>
-              </button>
-              <button
-                type="button"
-                className="productPopupCarouselNextBtn   swiper-custom-navigation-btn left-0 disabled:bg-gray/30 !bg-opacity-100 !text-white right-0 -translate-y-1/2"
-              >
-                <NextIcon className="w-6 aspect-square" />
-                <span className="sr-only">Next Button</span>
-              </button>
             </Swiper>
+            <button
+              type="button"
+              className="productPopupCarouselPrevBtn swiper-custom-navigation-btn disabled:bg-gray/30 !bg-opacity-100 !text-white left-0 -translate-y-1/2 -translate-x-1/2"
+            >
+              <PrevIcon className="w-6 aspect-square" />
+              <span className="sr-only">Previous button</span>
+            </button>
+            <button
+              type="button"
+              className="productPopupCarouselNextBtn swiper-custom-navigation-btn disabled:bg-gray/30 !bg-opacity-100 !text-white right-0 -translate-y-1/2 translate-x-1/2"
+            >
+              <NextIcon className="w-6 aspect-square" />
+              <span className="sr-only">Next Button</span>
+            </button>
           </div>
         </Dialog.Panel>
       </Dialog>
       <div className={style.mainwrapper}>
-        <div className="relative">
+        <div className="relative w-full aspect-[4/3] px-1 sm:px-2">
           <Swiper
             ref={mainSwiperRef}
             spaceBetween={10}
@@ -160,6 +165,7 @@ const ProductOverviewImage = ({
                     style={{ objectFit: "cover" }}
                     alt="productimage"
                     priority={true}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </SwiperSlide>
               )
@@ -167,28 +173,27 @@ const ProductOverviewImage = ({
           </Swiper>
           <button
             type="button"
-            className="productCarouselPrevBtn swiper-custom-navigation-btn left-0 -translate-y-1/2 -translate-x-1/2"
+            className="productCarouselPrevBtn swiper-custom-navigation-btn left-6 -translate-y-1/2 -translate-x-1/2"
           >
             <PrevIcon className="w-6 aspect-square" />
             <span className="sr-only">Previous button</span>
           </button>
           <button
             type="button"
-            className="productCarouselNextBtn swiper-custom-navigation-btn right-0 -translate-y-1/2 ml-4 translate-x-1/2"
+            className="productCarouselNextBtn swiper-custom-navigation-btn right-6 -translate-y-1/2 translate-x-1/2"
           >
             <NextIcon className="w-6 aspect-square" />
             <span className="sr-only">Next Button</span>
           </button>
         </div>
-        <div className={`${style.image_group} noScrollbar`}>
+        <div className={`noScrollbar`}>
           <Swiper
             // onSwiper={setThumbsSwiper}
-            spaceBetween={10}
             slidesPerView={4}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper"
+            className="mySwiper relative w-full flex"
           >
             {productImagesData?.map((item, index) => {
               return (
@@ -197,17 +202,22 @@ const ProductOverviewImage = ({
                     setCurrentIndex(index)
                   }}
                   key={item.id}
-                  className={clsx(
-                    "bg-white box-border border-2 border-gray/20 inline-block rounded-xl relative aspect-[4/3] hover:cursor-pointer select-none",
-                    { ["border-yellow/100"]: currentIndex === index }
-                  )}
+                  className={clsx("basis-[25%] px-1 sm:px-2")}
                 >
-                  <Image
-                    src={item.url}
-                    fill
-                    alt="images"
-                    style={{ objectFit: "cover" }}
-                  />
+                  <div
+                    className={clsx(
+                      "bg-white w-full box-border border-2 border-gray/20 inline-block rounded-xl relative aspect-[4/3] hover:cursor-pointer select-none overflow-hidden",
+                      { ["border-yellow/100"]: currentIndex === index }
+                    )}
+                  >
+                    <Image
+                      src={item.url}
+                      fill
+                      alt="images"
+                      style={{ objectFit: "cover" }}
+                      sizes="25vw"
+                    />
+                  </div>
                 </SwiperSlide>
               )
             })}

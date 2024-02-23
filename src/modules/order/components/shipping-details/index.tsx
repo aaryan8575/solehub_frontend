@@ -11,36 +11,34 @@ const ShippingDetails = ({ order }: ShippingDetailsProps) => {
   return (
     <div>
       <p className="flex flex-row text-heading6 py-2">Delivery</p>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="flex flex-col w-max flex-1">
-          <Text className="txt-medium font-semibold mb-1">
-            Shipping Address
-          </Text>
-          <Text className="txt-medium">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="flex flex-col flex-1">
+          <p className="text-caption2 font-semibold mb-1">Shipping Address</p>
+          <p className="text-caption2">
             {order.shipping_address.first_name}{" "}
             {order.shipping_address.last_name}
-          </Text>
-          <Text className="txt-medium">
+          </p>
+          <p className="text-caption2">
             {order.shipping_address.address_1}{" "}
             {order.shipping_address.address_2}
-          </Text>
-          <Text className="txt-medium">
+          </p>
+          <p className="text-caption2">
             {order.shipping_address.postal_code}, {order.shipping_address.city}
-          </Text>
-          <Text className="txt-medium">
+          </p>
+          <p className="text-caption2">
             {order.shipping_address.country_code?.toUpperCase()}
-          </Text>
+          </p>
         </div>
 
         <div className="flex flex-col w-max flex-1 ">
-          <Text className="txt-medium font-semibold mb-1">Contact</Text>
-          <Text className="txt-medium">{order.shipping_address.phone}</Text>
-          <Text className="txt-medium">{order.email}</Text>
+          <p className="text-caption2 font-semibold mb-1">Contact</p>
+          <p className="text-caption2">{order.shipping_address.phone}</p>
+          <p className="text-caption2">{order.email}</p>
         </div>
 
         <div className="flex flex-col w-max flex-1">
-          <Text className="txt-medium font-semibold mb-1">Method</Text>
-          <Text className="txt-medium">
+          <p className="text-caption2 font-semibold mb-1">Method</p>
+          <p className="text-caption2">
             {order.shipping_methods[0].shipping_option.name} (
             {formatAmount({
               amount: order.shipping_methods[0].price,
@@ -49,7 +47,7 @@ const ShippingDetails = ({ order }: ShippingDetailsProps) => {
               .replace(/,/g, "")
               .replace(/\./g, ",")}
             )
-          </Text>
+          </p>
         </div>
       </div>
       <Divider className="mt-8" />

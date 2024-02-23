@@ -14,6 +14,7 @@ import Bancontact from "@/modules/common/icons/bancontact"
 import { useState } from "react"
 import Button from "@/components/common/Button"
 import Edit from "@/public/icons/edit.svg"
+import PaymentButton from "../payment-button"
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
@@ -183,7 +184,7 @@ const Payment = () => {
                 />
               </div>
             )}
-            <Button
+            {/* <Button
               onClick={handleSubmit}
               variant="fill"
               color="primary"
@@ -195,7 +196,7 @@ const Payment = () => {
               isLoading={settingPaymentSession}
             >
               Continue to Review
-            </Button>
+            </Button> */}
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center px-4 py-16 text-gray-900">
@@ -244,6 +245,10 @@ const Payment = () => {
         </div>
       </div>
       <Divider className="mt-8" />
+
+      <div className="py-4">
+        <PaymentButton paymentSession={cart?.payment_session} />
+      </div>
     </div>
   )
 }

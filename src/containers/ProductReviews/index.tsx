@@ -1,35 +1,28 @@
-"use client"
-import ProductReviewCard from "@/components/products/ProductReviewCard"
-import ProductReviewForm from "@/components/products/ProductReviewForm"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
+import ProductReviewList from "@/components/products/ProductReviewList"
+import ProductReviewForm from "@/components/products/ProductReviewForm"
+import { reviewProps } from "@/modules/products/templates/product-info"
 
 type Props = {
   product: PricedProduct
-  reviewData: any
+  reviewData: reviewProps[]
 }
 
 const ProductReviews = ({ reviewData, product }: Props) => {
   if (!process.env.NEXT_PUBLIC_REVIEW) {
     return null
   }
+  console.log("reviewdata", reviewData)
+
   return (
-    <>
-      <section className="flex justify-center">
-        {reviewData && (
-          <ProductReviewForm
-            productDetailData={product}
-            reviews={reviewData.productReview}
-          />
-        )}
-      </section>
-      <section className="flex flex-col  gap-4">
-        {reviewData.productReview
-          ?.filter((x) => x.status === "approved")
-          ?.map((review) => (
-            <ProductReviewCard key={review.id} data={review} />
-          ))}
-      </section>
-    </>
+    <section className="grid md:grid-cols-2 gap-6 pb-5">
+      <ProductReviewList reviewData={reviewData} />
+      {reviewData && (
+        <div className="h-max md:sticky top-[50px]">
+          <ProductReviewForm productDetailData={product} reviews={reviewData} />
+        </div>
+      )}
+    </section>
   )
 }
 

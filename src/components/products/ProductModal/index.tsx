@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import { ProductProvider } from "@/lib/context/product-context"
 import WishlistBtn from "@/components/common/WishlistBtn"
+import ShareButton from "@/components/common/ShareBtn"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -26,8 +27,8 @@ const ProductModal = ({ product }: ProductTemplateProps) => {
             />
           )}
         </div>
-        <div className="flex flex-col justify-between">
-          <h3 className="font-bold">{product?.title} </h3>
+        <div className="flex flex-col justify-between gap-2">
+          <h3 className="font-bold m-0">{product?.title} </h3>
           <span className="text-gray line-clamp-3">
             <ReactMarkdown>{product?.description}</ReactMarkdown>
           </span>
@@ -38,23 +39,17 @@ const ProductModal = ({ product }: ProductTemplateProps) => {
               item={product}
               variant="red"
             />
+            <ShareButton url="" />
           </div>
           {/* <Rating rating={data.rating} reviewCount={data.reviewCount} /> */}
-          <div className="flex items-center gap-2 w-full">
-            <div className="flex-1">
-              <AddToCartBtn product={product} />
-            </div>
-            <Button as="a" href="/" variant="text">
-              <Share className="w-6" />
-            </Button>
-          </div>
-          <div>
+          <div className="flex items-center gap-2 w-full flex-wrap">
+            <AddToCartBtn product={product} />
             <Button
               as="a"
               variant="fill"
               color="primary"
               href={`/products/${product?.handle}`}
-              className="flex-1"
+              className="w-full"
             >
               More Details
             </Button>

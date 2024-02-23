@@ -1,6 +1,5 @@
 import Button from "@/components/common/Button"
 import Input from "@/components/common/formElements/Input"
-import Fleurveda from "@/public/icons/FleurvedaLogo.svg"
 import { medusaClient } from "@/lib/config"
 import { LOGIN_VIEW, useAccount } from "@/lib/context/account-context"
 import { emailRegex } from "@/lib/util/regex"
@@ -13,7 +12,7 @@ import {
   useState,
 } from "react"
 import { FieldValues, useForm } from "react-hook-form"
-import Modal from "@/modules/common/components/modal"
+import Logo from "@/public/icons/SolehubLogo.svg"
 
 interface SignInCredentials extends FieldValues {
   email: string
@@ -78,8 +77,7 @@ const Login = ({ query }: { query: string }) => {
         </div>
       )}
       <div className="flex justify-center">
-        {/* <Fleurveda className="h-16" /> */}
-        <img src="/images/SolehubLogo.png" alt="logo" className="h-10" />
+        <Logo className="h-12 text-primary" />
       </div>
       <div className="flex flex-col gap-2 items-center">
         <p className="text-heading4 font-bold">Welcome back</p>

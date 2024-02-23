@@ -3,7 +3,6 @@ import { Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import CrossIcon from "@/public/icons/cross.svg"
 import HamburgerIcon from "@/public/icons/hamburger.svg"
-import FleurvedaLogo from "@/public/icons/FleurvedaLogo.svg"
 import Link from "next/link"
 import style from "./mobilenav.module.css"
 import Button from "../../Button"
@@ -13,6 +12,7 @@ import { usePathname } from "next/navigation"
 import clsx from "clsx"
 import MobileDropDown from "./Mobilenav-dropdown"
 import { dropDownData } from "@/lib/constData"
+import Logo from "@/public/icons/SolehubLogo.svg"
 
 function MobileNav({ data }: { data: NavLinksType }) {
   const { state, open, close } = useToggleState()
@@ -55,11 +55,7 @@ function MobileNav({ data }: { data: NavLinksType }) {
                 <div className={style.container}>
                   <div className={style.menuHeader}>
                     <a href="/">
-                      <img
-                        src="/images/SolehubLogo.png"
-                        alt="logo"
-                        className="h-10"
-                      />
+                      <Logo className="h-8 sm:h-12 text-primary" />
                     </a>
                     <a>
                       <CrossIcon className="h-5 text-black" onClick={close} />

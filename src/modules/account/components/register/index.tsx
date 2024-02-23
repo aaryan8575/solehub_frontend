@@ -13,7 +13,7 @@ import {
 import { FieldValues, useForm } from "react-hook-form"
 import Input from "@/components/common/formElements/Input"
 import Button from "@/components/common/Button"
-import Fleurveda from "@/public/icons/FleurvedaLogo.svg"
+import Logo from "@/public/icons/SolehubLogo.svg"
 import {
   emailRegex,
   nameRegex,
@@ -80,7 +80,7 @@ const Register = ({ query }: { query: string }) => {
         </div>
       )}
       <div className="flex justify-center">
-        <img src="/images/SolehubLogo.png" alt="logo" className="h-10" />
+        <Logo className="h-12 text-primary" />
       </div>
       <div className="flex flex-col gap-2 items-center">
         <p className="text-heading3 ">Create Account</p>
@@ -211,7 +211,7 @@ const Register = ({ query }: { query: string }) => {
         )}
 
         <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Fleurveda&apos;s{" "}
+          By creating an account, you agree to SoleHub &apos;s{" "}
           <Link href="/content/privacy-policy" className="text-primary">
             Privacy Policy
           </Link>{" "}

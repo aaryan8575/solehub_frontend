@@ -5,6 +5,7 @@ import { ProductProvider } from "@/lib/context/product-context"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import Share from "@/public/icons/share.svg"
 import ProductReviews from "../ProductReviews"
+import ShareButton from "@/components/common/ShareBtn"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -21,18 +22,11 @@ const ProductOverview = ({ product, reviewData }: ProductTemplateProps) => {
   return (
     <>
       <ProductProvider product={product}>
-        <section className="relative sm:mt-0 mt-4 grid md:grid-cols-2 items-start grid-cols-1 flex-1 gap-5 lg:gap-20">
+        <section className="relative sm:mt-0 mt-4 grid md:grid-cols-2 items-start grid-cols-1 flex-2 gap-5 lg:gap-20">
           <div className="h-max md:sticky top-[100px]">
-            <div className="flex items-start justify-between md:hidden">
-              <h3 className="font-bold mb-4">{product.title}</h3>
-              <Button
-                as="a"
-                href="/"
-                variant="round"
-                className="aspect-square px-2 py-2"
-              >
-                <Share className="w-6" />
-              </Button>
+            <div className="flex items-center pb-4 justify-between md:hidden">
+              <h3 className="font-bold m-0">{product.title}</h3>
+              <ShareButton url="" />
             </div>
             <ProductOverviewImage
               productImagesData={[
@@ -52,7 +46,7 @@ const ProductOverview = ({ product, reviewData }: ProductTemplateProps) => {
             />
           </div>
         </section>
-        {/* <ProductReviews product={product} reviewData={reviewData} /> */}
+        {/* <ProductReviews product={product} reviewData={reviewData!} /> */}
       </ProductProvider>
     </>
   )

@@ -3,6 +3,20 @@ import { Heading, Text } from "@medusajs/ui"
 import Link from "next/link"
 import React from "react"
 
+export type reviewProps = {
+  id: string
+  created_at: Date
+  updated_at: Date
+  deleted_at: Date | null
+  product_id: string
+  customer_id: string
+  title: string
+  rating: number
+  content: string
+  status: string
+  is_deleted: boolean
+}
+
 type ProductInfoProps = {
   product: PricedProduct
 }

@@ -19,10 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const newDesc = product.description?.replaceAll(/\*/gm, "")
 
   return {
-    title: `${product.title} | Fleurveda`,
+    title: `${product.title} | SoleHub`,
     description: `${newDesc}`,
     openGraph: {
-      title: `${product.title} | Fleurveda`,
+      title: `${product.title} | SoleHub`,
       description: `${newDesc}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },

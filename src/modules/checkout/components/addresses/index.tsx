@@ -68,7 +68,7 @@ const Addresses = () => {
           <div className="text-small-regular">
             {cart && cart.shipping_address ? (
               <div className="flex items-start gap-x-8">
-                <div className="flex max-sm:flex-col gap-y-4 items-start gap-x-1 flex-wrap gap-4 w-full">
+                <div className="flex max-sm:flex-col gap-y-4 items-start gap-x-2 flex-wrap gap-4 w-full">
                   <div className="flex flex-col flex-1 w-max">
                     <Text className="txt-medium font-semibold mb-1">
                       Shipping Address
@@ -107,7 +107,7 @@ const Addresses = () => {
 
                     {checked ? (
                       <Text className="txt-medium">
-                        Billing- and delivery address are the same.
+                        Billing and delivery address are the same.
                       </Text>
                     ) : (
                       <>

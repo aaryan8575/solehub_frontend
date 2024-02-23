@@ -1,41 +1,49 @@
 "use client"
-import { useState } from "react"
+import {
+  Control,
+  FieldValue,
+  FieldValues,
+  useController,
+} from "react-hook-form"
 import StarIcon from "@/public/icons/star.svg"
-import clsx from "clsx"
 import Button from "@/components/common/Button"
-import { useController } from "react-hook-form"
-
-const Rating = ({ name, control }) => {
+import clsx from "clsx"
+type Props = {
+  name: string
+  control: any
+}
+const RatingInput = ({ name, control }: Props) => {
   const {
     field: { onChange, value },
   } = useController({
     name,
     control,
-    defaultValue: 0,
+    defaultValue: 4,
   })
 
   return (
-    <div className="flex gap-2">
+    <div className="flex">
       {[1, 2, 3, 4, 5].map((x) => (
-        <button
+        <Button
+          variant="icon"
           key={x}
-          onClick={(e) => {
+          onClick={(e: React.MouseEvent<HTMLElement>) => {
             e.preventDefault()
             onChange(x)
           }}
         >
           <StarIcon
             key={x}
-            className={clsx("h-5 w-5  flex-shrink-0", {
-              ["text-primary"]: x <= value,
-              ["text-gray/20"]: x > value,
+            className={clsx("h-5 w-5 flex-shrink-0", {
+              ["fill-primary"]: x <= value,
+              ["fill-transparent"]: x > value,
             })}
             aria-hidden="true"
           />
-        </button>
+        </Button>
       ))}
     </div>
   )
 }
 
-export default Rating
+export default RatingInput

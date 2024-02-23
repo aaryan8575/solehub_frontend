@@ -12,7 +12,7 @@
 @layer base {
   :root {
     /* new colors */
-    --color-primary: 73 134 202;
+    --color-primary: 25 55 131;
     --color-secondary: 151 189 231;
     --color-footblack: 0 0 0;
     --color-floral-white: 255 251 242;
@@ -148,7 +148,7 @@
   --swiper-pagination-color: rgba(var(--color-primary));
 }
 .swiper-custom-navigation-btn {
-  @apply max-sm:hidden absolute z-10 top-1/2 w-14 aspect-square bg-blue-300 rounded-full text-footblack hover:bg-primary hover:text-white duration-300 flex justify-center items-center cursor-pointer;
+  @apply max-sm:hidden absolute z-10 top-1/2 w-14 aspect-square hover:bg-primary bg-opacity-100 rounded-full hover:text-white bg-secondary text-primary duration-300 flex justify-center items-center cursor-pointer;
 }
 /* ------------------- swiper ends ------------------- */
 
