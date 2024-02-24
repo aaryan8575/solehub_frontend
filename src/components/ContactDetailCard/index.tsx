@@ -15,7 +15,7 @@ const ContactDetail = ({ data }: ContactDetailType) => {
 
   return (
     <div className={style.contactDetails}>
-      <div className="p-3 aspect-square rounded-md bg-primary text-white">
+      <div className="p-2 aspect-square rounded-md bg-primary text-white ">
         <Icon className="h-5" />
       </div>
 

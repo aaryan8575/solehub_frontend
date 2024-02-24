@@ -1,9 +1,7 @@
 .contactDetails {
-  @apply flex gap-4 items-center;
-  & > .icon {
-    @apply !rounded-xl !aspect-square !p-4;
-  }
-  & > .description {
-    @apply text-caption1;
+  @apply flex flex-1 gap-4 items-start;
+
+  & .description {
+    @apply text-caption1 mt-1;
   }
 }

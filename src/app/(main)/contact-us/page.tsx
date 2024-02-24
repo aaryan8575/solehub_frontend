@@ -1,4 +1,3 @@
-import ContactUsBanner from "@/containers/ContactUsBanner"
 import ContactUsSection from "@/containers/ContactUsSection"
 import { Metadata } from "next"
 
@@ -12,7 +11,6 @@ type Props = {}
 const page = (props: Props) => {
   return (
     <>
-      {/* <ContactUsBanner /> */}
       <ContactUsSection />
     </>
   )

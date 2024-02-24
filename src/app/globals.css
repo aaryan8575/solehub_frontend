@@ -112,7 +112,7 @@
 
   input[type="checkbox"],
   input[type="radio"] {
-    @apply border-none w-max shadow-none accent-green ring-0;
+    @apply border-none w-max shadow-none accent-primary ring-0;
   }
 }
 

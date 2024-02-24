@@ -1729,6 +1729,11 @@
   resolved "https://registry.yarnpkg.com/@medusajs/icons/-/icons-1.1.0.tgz#eeb8d5aa0ffbea7546d962b38fcf7593a50e2866"
   integrity sha512-90+nCmUq9W4KHgg8XuyiZcp41yRleTqT1Y/OZW+Th8FkCvFd8981ugwu7DYZjnaUvXnBCpsGDQ0zYuJ7sU4QIA==
 
+"@medusajs/icons@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@medusajs/icons/-/icons-1.2.0.tgz#0ccc10e07f7dd9dad6d12e3153c7aa2588fe5882"
+  integrity sha512-kjPfB3gN9aNXlSI3Xpa4HDUpyeMZSc6aOFgP1ZLv+hBNjETH2k+CpDj3rkpfYcjtuxfVxWdtGzPXx8A8UQGsMw==
+
 "@medusajs/link-modules@^0.2.3", "@medusajs/link-modules@^0.2.6":
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/@medusajs/link-modules/-/link-modules-0.2.6.tgz#17763e537ad24404fc4c946042acb4976308348d"
@@ -1859,6 +1864,22 @@
     pg "^8.11.2"
     resolve-cwd "^3.0.0"
 
+"@medusajs/modules-sdk@^1.8.8":
+  version "1.12.8"
+  resolved "https://registry.yarnpkg.com/@medusajs/modules-sdk/-/modules-sdk-1.12.8.tgz#7ea65dc2c0463ed0752204bd9e108101a6405564"
+  integrity sha512-xn9RImwRc/fg8wgjqhc6GwgsrLAd9TNPvsKCcjhDxVaKzlY391Vk4WCCdXR4+VzYttGYORxW6ADC11CSv1He2g==
+  dependencies:
+    "@graphql-tools/merge" "^9.0.0"
+    "@graphql-tools/schema" "^10.0.0"
+    "@medusajs/orchestration" "^0.5.4"
+    "@medusajs/types" "^1.11.12"
+    "@medusajs/utils" "^1.11.5"
+    awilix "^8.0.0"
+    graphql "^16.6.0"
+    knex "2.4.2"
+    pg "^8.11.2"
+    resolve-cwd "^3.0.0"
+
 "@medusajs/orchestration@^0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@medusajs/orchestration/-/orchestration-0.5.2.tgz#5ef51e74bc0280b4eb064aeca12b84f184b8e59a"
@@ -1866,6 +1887,16 @@
   dependencies:
     "@medusajs/types" "^1.11.10"
     "@medusajs/utils" "^1.11.3"
+    awilix "^8.0.0"
+    graphql "^16.6.0"
+
+"@medusajs/orchestration@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@medusajs/orchestration/-/orchestration-0.5.4.tgz#9af73db4224cb0fb76ad8e972c200fa3161fc018"
+  integrity sha512-sXHJ8ZXjSSZb5xqL4datsOhy1Ztnf9pqYNFXjO4SBDp7AUu41W9MDZaZQX8ZxXkBRVw5O7POXczqu3l9Ti9PFg==
+  dependencies:
+    "@medusajs/types" "^1.11.12"
+    "@medusajs/utils" "^1.11.5"
     awilix "^8.0.0"
     graphql "^16.6.0"
 
@@ -1904,6 +1935,11 @@
   version "1.11.10"
   resolved "https://registry.yarnpkg.com/@medusajs/types/-/types-1.11.10.tgz#ac178301f5706bf31f071f723b1d1bf67a2663df"
   integrity sha512-gVVI95MUkF6pJRf6AAeMc4yEjSULmD3gnfW/1CKHoWqpiyzk6cb15rFPnLoDf7ySTowbaeaKEmw36uGOG1MBHg==
+
+"@medusajs/types@^1.11.12", "@medusajs/types@^1.11.13":
+  version "1.11.13"
+  resolved "https://registry.yarnpkg.com/@medusajs/types/-/types-1.11.13.tgz#65b2a3f970fb652e719b5733139152e2e30ef957"
+  integrity sha512-y8NM4G/rIrZxtt5rJmRCaFQ33BOIuPPh4MXdo6e3fHyEa8mN9NSo1IWydkV470WyqfJ2Z43QbW8v05jfyKvJIw==
 
 "@medusajs/ui-preset@^1.0.2":
   version "1.0.2"
@@ -1953,6 +1989,19 @@
   integrity sha512-vr6VbcmVm1O/Gy59GCbz7E5ZbtcY7Eo6xCeDfrz9wa89V/W4cAp3OrWuPl6ZMzujFfrsqu1lFWabbX7gri1zIQ==
   dependencies:
     "@medusajs/types" "^1.11.10"
+    "@mikro-orm/core" "5.9.7"
+    "@mikro-orm/migrations" "5.9.7"
+    "@mikro-orm/postgresql" "5.9.7"
+    awilix "^8.0.1"
+    knex "2.4.2"
+    ulid "^2.3.0"
+
+"@medusajs/utils@^1.11.5", "@medusajs/utils@^1.9.4":
+  version "1.11.6"
+  resolved "https://registry.yarnpkg.com/@medusajs/utils/-/utils-1.11.6.tgz#52ba9472628cb37a27929a6edff25cdd123ad381"
+  integrity sha512-xGjUdgesteN1W+OFxrT7IUMDmlWpFoIMoEemn6UYXqjpeHmFfUJ1Co2x1jSEotXxykKbGnTa+MH72CA3JCjULg==
+  dependencies:
+    "@medusajs/types" "^1.11.13"
     "@mikro-orm/core" "5.9.7"
     "@mikro-orm/migrations" "5.9.7"
     "@mikro-orm/postgresql" "5.9.7"
@@ -4769,7 +4818,7 @@ cross-env@^5.2.1:
   dependencies:
     cross-spawn "^6.0.5"
 
-cross-fetch@^3.1.5:
+cross-fetch@^3.1.5, cross-fetch@^3.1.6:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.8.tgz#0327eba65fd68a7d119f8fb2bf9334a1a7956f82"
   integrity sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==
@@ -7571,6 +7620,17 @@ medusa-core-utils@^1.2.0, medusa-core-utils@^1.2.1:
   resolved "https://registry.yarnpkg.com/medusa-core-utils/-/medusa-core-utils-1.2.1.tgz#c95ce78fb5e2d532b5441c11575cbf99f6138fc2"
   integrity sha512-PBAm+5ODVcS9HREz7SH9LtiDY6/Fkwax+tqB5cTjujOiWSPuuj13ImH8eb9p6aVoOEvFtpDP4HL8TIijpJ6juw==
 
+medusa-plugin-meilisearch@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/medusa-plugin-meilisearch/-/medusa-plugin-meilisearch-2.0.10.tgz#647839dcaeb4d876771fda682ba0e3209616d0c9"
+  integrity sha512-uO1L8jCqmPeF+eTzYiqmauD5SfUWoao7lbvl4L/R+XyW9LhZR0kcLSFyOXtwKQ6SHvLrRQRxRHi4DMoHVpnHeA==
+  dependencies:
+    "@medusajs/modules-sdk" "^1.8.8"
+    "@medusajs/utils" "^1.9.4"
+    body-parser "^1.19.0"
+    lodash "^4.17.21"
+    meilisearch "^0.32.3"
+
 medusa-react@^9.0.0:
   version "9.0.13"
   resolved "https://registry.yarnpkg.com/medusa-react/-/medusa-react-9.0.13.tgz#5babc257013918fa403a7ed06e24541a8b0c4556"
@@ -7609,6 +7669,13 @@ meilisearch@0.25.1:
   integrity sha512-20jO0pK9BhghxHSkOLbdoYn58h/Z0PNL3JQcRq7ipNIeqrxkAetCZZ6ttJC3uxcz0jVglmiFoSXu3Z/lEOLOLQ==
   dependencies:
     cross-fetch "^3.1.5"
+
+meilisearch@^0.32.3:
+  version "0.32.5"
+  resolved "https://registry.yarnpkg.com/meilisearch/-/meilisearch-0.32.5.tgz#811e7df8586910a3b5dc3356c7ed669442dbe51e"
+  integrity sha512-pVccjGAGP1IDSLg3lx9VhyQjUo7kN8x/HVjSurtb8U24V5/pALpf5H2hj6f60QhJd0Ea4tnGRv8fGr2YqWMo9A==
+  dependencies:
+    cross-fetch "^3.1.6"
 
 merge-descriptors@1.0.1:
   version "1.0.1"

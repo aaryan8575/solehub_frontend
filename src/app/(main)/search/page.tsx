@@ -14,17 +14,20 @@ import clsx from "clsx"
 import AnimatedLoader from "@/public/icons/animatedLoader.svg"
 type Props = {}
 
-const Search = (props: Props) => {
+const Search = ({ searchParams }: Props) => {
   const router = useRouter()
   const [query, setQuery] = useState("")
   // const [products, setProducts] = useState([])
   const search = useDebounce(query?.trim(), 2000)
+  const SALES_CHANNEL_ID = process.env.NEXT_PUBLIC_SALES_CHANNEL_ID || ""
   const { products, isLoading } = useProducts({
     q: search,
+    sales_channel_id: [SALES_CHANNEL_ID],
   })
 
-  console.log(isLoading, "loading search .........")
-
+  const onDismiss = () => {
+    router.back()
+  }
   const searchPlaceholderRef = useRef(null)
   const updatePlaceholder = (open: boolean) => {
     if (open && searchPlaceholderRef.current) {
@@ -44,7 +47,6 @@ const Search = (props: Props) => {
     | "pro7"
     | "pro8"
   )[] = ["pro1", "pro2", "pro3", "pro4", "pro5", "pro6", "pro7", "pro8"]
-  // console.log(products)
   return (
     <section className="bg-floralWhite min-h-screen py-0 ">
       <div className="px-2 py-4 h-full w-full ">
@@ -81,9 +83,7 @@ const Search = (props: Props) => {
                     variant="fill"
                     className="border-none"
                     title="searchbar close"
-                    onClick={() => {
-                      setQuery("")
-                    }}
+                    onClick={onDismiss}
                   >
                     <Cross_icon className="w-4 aspect-square stroke-black" />
                   </Button>
@@ -94,8 +94,7 @@ const Search = (props: Props) => {
                     {isLoading && (
                       <div className="w-full h-full md:min-h-[400px] flex justify-center items-center">
                         <div className="w-20 aspect-square">
-                          {" "}
-                          <AnimatedLoader />{" "}
+                          <AnimatedLoader />
                         </div>
                       </div>
                     )}
@@ -110,22 +109,22 @@ const Search = (props: Props) => {
                       </div>
                     ) : (
                       <>
-                        <div className="h-fit sm:flex sm:w-full  no-scrollbar sm:overflow-x-hidden ">
+                        <div className="h-fit  sm:w-full  no-scrollbar   py-3 shrink-0  grid grid-cols-1 min-[420px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4   flex-wrap gap-4 justify-center items-center ">
                           {products?.slice(0, 15)?.map((item, index) => (
                             <div
                               key={item.id}
                               className={clsx(
-                                "w-full flex justify-center  shrink-0 p-3",
+                                "flex w-full justify-center items-center",
                                 {
-                                  "sm:w-1/2": products?.length == 2,
-                                  "sm:w-1/2 md:w-1/3": products?.length == 3,
-                                  "sm:w-1/2 md:w-1/3 lg:w-1/4":
-                                    products?.length && products?.length >= 4,
+                                  // "sm:w-1/2": products?.length == 2,
+                                  // "sm:w-1/2 md:w-1/3": products?.length == 3,
+                                  // "sm:w-1/2 md:w-1/3 lg:w-1/4":
+                                  //   products?.length && products?.length >= 4,
                                 }
                               )}
                             >
                               <Combobox.Option
-                                className={"w-full"}
+                                className={"w-[260px]"}
                                 value={item.title}
                               >
                                 <ProductProvider product={item} key={item.id}>

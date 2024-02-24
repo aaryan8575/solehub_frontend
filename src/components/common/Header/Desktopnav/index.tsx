@@ -23,8 +23,9 @@ const DesktopNav = ({ data }: { data: NavLinksType }) => {
           <Logo className="h-12 text-primary" />
         </Link>
         <div className={style.icons}>
-          {/* <SearchButton /> */}
+          <SearchButton />
           <CartBtn />
+
           <AccountBtn />
         </div>
       </div>

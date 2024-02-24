@@ -28,7 +28,7 @@ export const navbarData = {
     {
       id: 4,
       title: "Contact Us",
-      url: "/contact",
+      url: "/contact-us",
     },
   ],
 }
@@ -415,6 +415,29 @@ export const aboutUsContent = [
     id: 6,
     title: "Join the SoleHub Community",
     description: `We invite you to join our growing community of shoe enthusiasts and experience the SoleHub difference for yourself. Whether you're a sneakerhead, a fashionista, or simply someone who appreciates a great pair of shoes, we welcome you to explore our collection and find your perfect fit.`,
+  },
+]
+
+//-------------------------------------ABOUT US -------------------------------------------//
+
+export const contactDetails = [
+  {
+    id: 1,
+    name: "Address",
+    icon: Location,
+    description: "B/605 Ganesh Glory 11, Jagatpur Road, Gota, Ahmedabad",
+  },
+  {
+    id: 2,
+    name: "Email",
+    icon: Email,
+    description: "contact@solehub.com",
+  },
+  {
+    id: 3,
+    name: "Phone-number",
+    icon: Phone,
+    description: "+91 7895612344",
   },
 ]
 

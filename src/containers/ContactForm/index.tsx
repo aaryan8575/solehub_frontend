@@ -6,7 +6,6 @@ import TextArea from "@/components/common/formElements/TextArea"
 import SubmitButton from "@/components/common/formElements/SubmitButton"
 import { emailRegex, nameRegex } from "@/lib/util/regex"
 import style from "./contactform.module.css"
-import Button from "@/components/common/Button"
 
 type FormValues = {
   firstname: string
@@ -29,7 +28,6 @@ const ContactForm: React.FC = () => {
   const submit = handleSubmit(async (data: FormValues) => {
     setSubmitting(true)
     setError(undefined)
-    console.log(data)
     setSubmitting(false)
     reset()
   })
@@ -120,7 +118,7 @@ const ContactForm: React.FC = () => {
         />
       </div>
       <div>
-        <Button
+        <SubmitButton
           variant="fill"
           color="primary"
           title="send message"
@@ -128,7 +126,7 @@ const ContactForm: React.FC = () => {
           isLoading={submitting}
         >
           Send Message
-        </Button>
+        </SubmitButton>
       </div>
       {error && (
         <div className="text-rose-500 text-small-regular py-2">{error}</div>
