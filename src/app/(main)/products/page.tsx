@@ -1,5 +1,5 @@
 import ProductsGrid from "@/containers/ProductsGrid"
-import ProductsTemplate from "@/containers/ProductsTemplate"
+import ProductsTemplate from "@/containers/SortFilter"
 import StoreTemplate from "@/modules/store/templates"
 import { Metadata } from "next"
 

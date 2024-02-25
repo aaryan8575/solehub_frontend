@@ -1,0 +1,15 @@
+.section {
+  @apply flex flex-col gap-8 px-container py-4;
+
+  & > .title {
+    @apply text-center sm:mt-0;
+  }
+}
+
+.snap_x_slider {
+  @apply overflow-x-scroll w-full h-auto flex snap-x snap-mandatory snap-always py-2 gap-4 sm:gap-6;
+}
+
+.span_x_slide {
+  @apply grow shrink-0 basis-[50%] sm:basis-[30%] xl:basis-[20%] snap-x snap-center h-full;
+}

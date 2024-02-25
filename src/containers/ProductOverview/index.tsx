@@ -6,6 +6,7 @@ import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import Share from "@/public/icons/share.svg"
 import ProductReviews from "../ProductReviews"
 import ShareButton from "@/components/common/ShareBtn"
+import RelatedProduct from "../RelatedProduct"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -46,7 +47,8 @@ const ProductOverview = ({ product, reviewData }: ProductTemplateProps) => {
             />
           </div>
         </section>
-        {/* <ProductReviews product={product} reviewData={reviewData!} /> */}
+        {/* <ProductReviews product={product} reviewData={reviewData} /> */}
+        <RelatedProduct productDetailData={product} />
       </ProductProvider>
     </>
   )
