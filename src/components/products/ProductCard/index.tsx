@@ -7,6 +7,7 @@ import WishlistBtn from "@/components/common/WishlistBtn"
 import useProductPrice from "@/lib/hooks/use-product-price"
 import { useProductActions } from "@/lib/context/product-context"
 import { log } from "console"
+import ShareButton from "@/components/common/ShareBtn"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -55,11 +56,8 @@ const ProductCard = ({ product }: ProductTemplateProps) => {
             )}
           </div>
           <div className="pr-5">
-            <WishlistBtn
-              product_id={product.id!}
-              item={product}
-              variant="black"
-            />
+            <WishlistBtn product_id={product.id!} item={product} />
+            <ShareButton url={`${product.handle}`} />
           </div>
         </div>
         <Link
@@ -73,7 +71,7 @@ const ProductCard = ({ product }: ProductTemplateProps) => {
               alt={product?.title || "image"}
               priority
               fill
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
               className="self-center"
             />
           )}

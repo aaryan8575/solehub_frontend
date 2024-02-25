@@ -1,14 +1,21 @@
 import Button from "@/components/common/Button"
 import Modal from "@/modules/common/components/modal"
 import React from "react"
+// import ReasonsModal from "../ReasonsModal"
 
 type Props = {
   showModal: boolean
   closeModal: () => void
   removeItem: () => void
+  button_name: string
 }
 
-const RemoveModal = ({ showModal, closeModal, removeItem }: Props) => {
+const RemoveModal = ({
+  showModal,
+  closeModal,
+  removeItem,
+  button_name,
+}: Props) => {
   return (
     <Modal size="small" isOpen={showModal} close={closeModal}>
       <p className="text-heading5 mb-4">Remove item?</p>
@@ -27,11 +34,10 @@ const RemoveModal = ({ showModal, closeModal, removeItem }: Props) => {
         </Button>
         <Button
           variant="fill"
-          color="primary"
-          className="duration-300"
+          className="duration-300 bg-rose-400"
           onClick={removeItem}
         >
-          Remove
+          {button_name}
         </Button>
       </div>
     </Modal>

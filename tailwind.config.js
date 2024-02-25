@@ -21,6 +21,7 @@ module.exports = {
         footblack: "rgba(var(--color-footblack) / <alpha-value>)",
         floralWhite: "rgba(var(--color-floral-white) / <alpha-value>)",
         skin: "rgba(var(--color-skin) / <alpha-value>)",
+        red: "rgba(var(--color-red) / <alpha-value>)",
         // cyan: "rgba(var(--color-cyan) / <alpha-value>)",
 
         //  old colors

@@ -1,4 +1,6 @@
 import ProductsGrid from "@/containers/ProductsGrid"
+import ProductsTemplate from "@/containers/ProductsTemplate"
+import StoreTemplate from "@/modules/store/templates"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -10,6 +12,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* <ProductsBanner /> */}
+      {/* <ProductsTemplate /> */}
       <ProductsGrid />
       {/* <StoreTemplate /> */}
     </>

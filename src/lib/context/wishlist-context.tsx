@@ -28,6 +28,8 @@ interface WishListContext {
 
 export const WishListContext = createContext<WishListContext | null>(null)
 
+const sales_channel_id = process.env.NEXT_PUBLIC_SALES_CHANNEL_ID
+
 export const WishListProvider = ({ children }: PropsWithChildren) => {
   const [wishListState, dispatchWishList] = useReducer(
     WishListReducer,
@@ -42,12 +44,15 @@ export const WishListProvider = ({ children }: PropsWithChildren) => {
 
   const WISHLIST_ID = "wishlist_id"
 
-  const setWishlistItem = (wishlist) => {
-    if (isBrowser) {
-      localStorage.setItem(WISHLIST_ID, wishlist?.id)
-    }
-    dispatchWishList({ type: "LOAD_WISHLIST", payload: wishlist })
-  }
+  const setWishlistItem = useCallback(
+    (wishlist) => {
+      if (isBrowser) {
+        localStorage.setItem(WISHLIST_ID, wishlist?.id)
+      }
+      dispatchWishList({ type: "LOAD_WISHLIST", payload: wishlist })
+    },
+    [isBrowser]
+  )
 
   const addWishListItem = useCallback(
     async (postData: any, wishlistId: string | null) => {
@@ -113,11 +118,16 @@ export const WishListProvider = ({ children }: PropsWithChildren) => {
     [wishListState?.id]
   )
 
-  const checkProductInWishList = (variant_id: number) => {
-    const item = wishListState?.items?.find((x) => x?.product_id === variant_id)
+  const checkProductInWishList = useCallback(
+    (variant_id: number) => {
+      const item = wishListState?.items?.find(
+        (x) => x?.product_id === variant_id
+      )
 
-    return item?.id
-  }
+      return item?.id
+    },
+    [wishListState?.items]
+  )
 
   const toggleWishList = useCallback(
     (product_id: number) => {
@@ -158,8 +168,9 @@ export const WishListProvider = ({ children }: PropsWithChildren) => {
       : null
 
     if (regionId) {
+      const sales_channel_query = encodeURIComponent(`${[sales_channel_id]}`)
       try {
-        const wishlist = `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/wishlist`
+        const wishlist = `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/wishlist?sales_channel_id=${sales_channel_query}`
 
         const data = await fetch(wishlist, {
           method: "POST",
@@ -234,7 +245,15 @@ export const WishListProvider = ({ children }: PropsWithChildren) => {
         localStorage.setItem(WISHLIST_ID, "")
       }
     }
-  }, [regionId, customer])
+  }, [
+    regionId,
+    customer,
+    addWishListItem,
+    customerWishlist,
+    isBrowser,
+    setWishlistItem,
+    wishListState,
+  ])
 
   const customerLogout = useCallback(() => {
     // localStorage.clear();
@@ -244,7 +263,7 @@ export const WishListProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     initializeWishlist()
-  }, [initializeWishlist])
+  }, [])
 
   const value = useMemo(
     () => ({

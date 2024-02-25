@@ -43,7 +43,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
         {!!discount_total && (
           <div className="flex items-center justify-between">
             <span>Discount</span>
-            <span className="text-green font-medium">
+            <span className="text-primary font-medium">
               - {getAmount(discount_total)}
             </span>
           </div>
@@ -51,7 +51,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
         {!!gift_card_total && (
           <div className="flex items-center justify-between">
             <span>Gift card</span>
-            <span className="text-green font-medium">
+            <span className="text-primary font-medium">
               - {getAmount(gift_card_total)}
             </span>
           </div>
@@ -68,7 +68,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
       <div className="h-px w-full border-b border-gray-200 my-2" />
       <div className="flex items-center justify-between mb-2">
         <p className="font-semibold ">Total</p>
-        <span className="text-caption1 font-semibold text-green-800">
+        <span className="text-caption1 font-semibold text-primary">
           {getAmount(total)}
         </span>
       </div>

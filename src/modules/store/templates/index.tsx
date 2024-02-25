@@ -11,7 +11,7 @@ const StoreTemplate = () => {
   const [sortBy, setSortBy] = useState<SortOptions>("created_at")
 
   return (
-    <div className="flex flex-col small:flex-row small:items-start py-6">
+    <div className="flex flex-col gap-8">
       <RefinementList
         refinementList={params}
         setRefinementList={setParams}

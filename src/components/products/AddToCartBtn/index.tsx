@@ -19,7 +19,7 @@ import LoadingSpinner from "@/components/common/LoadingSpinner"
 
 type Props = {
   type?: "icon" | "text"
-  product: PricedProduct
+  product?: PricedProduct
   varient?: "primary" | "outlined"
 }
 
@@ -73,7 +73,7 @@ const AddToCartBtn = ({
       {type === "icon" ? (
         <div className="flex">
           <Button
-            variant="round"
+            variant="icon"
             color="dark"
             onClick={handleAddToCart}
             disabled={!inStock || !variant || !!loading}

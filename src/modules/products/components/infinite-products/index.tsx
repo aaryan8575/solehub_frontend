@@ -63,7 +63,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
   }, [inView, hasNextPage])
 
   return (
-    <div className="flex-1 content-container">
+    <section className="flex-1 content-container">
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8 flex-1">
         {previews.map((p) => (
           <li key={p.id}>
@@ -90,7 +90,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
       >
         <span ref={ref}></span>
       </div>
-    </div>
+    </section>
   )
 }
 

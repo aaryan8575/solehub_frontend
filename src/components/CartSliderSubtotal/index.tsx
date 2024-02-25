@@ -16,14 +16,14 @@ const CartSliderSubtotal = (props: Props) => {
     return (
       <div className="flex flex-col pt-2 gap-4">
         <div className="flex flex-col gap-4 px-4">
-          <Button
+          {/* <Button
             as="a"
             variant="outlined"
             href="/account/wishlist"
             className="w-full hover:bg-secondary"
           >
             Add item from wishlist
-          </Button>
+          </Button> */}
           <div className="flex justify-between items-center text-body2 font-semibold bg-secondary px-6 py-2 rounded-md">
             <span>Total</span>
             <span>
