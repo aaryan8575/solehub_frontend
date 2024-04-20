@@ -1,0 +1,38 @@
+.btn {
+  @apply px-4 py-2 md:px-8 md:py-2 rounded-md flex justify-center items-center gap-2 disabled:bg-gray/40 disabled:text-white whitespace-nowrap;
+  transition: transform 300ms ease, background-color 300ms ease;
+  transform-style: preserve-3d;
+
+  &:hover {
+    transform: scale3d(0.96, 0.96, 1.01);
+  }
+
+  &--fill {
+    @apply bg-opacity-100 text-white;
+  }
+
+  &--primary {
+    @apply bg-primary border-primary;
+  }
+
+  &--outlined {
+    @apply bg-transparent border-2;
+
+    &.btn--dark {
+      @apply text-black border-black border-opacity-30;
+    }
+    &:hover {
+      @apply border-opacity-100;
+    }
+  }
+
+  &--text {
+    &.btn--black {
+      @apply text-black bg-transparent;
+    }
+  }
+
+  &--icon {
+    @apply aspect-square px-0 py-0;
+  }
+}

@@ -1,0 +1,110 @@
+/* .footerWrapper {
+  @apply flex bg-skin relative pt-10;
+
+  & .footerImageWrapper {
+    @apply absolute right-0 top-0 min-w-[200px] w-[30%] max-w-[350px] aspect-square -translate-y-[40%] -translate-x-[10%];
+  }
+
+  & > .footer {
+    @apply pt-10 pb-10 flex flex-col gap-4;
+
+    & > .heading {
+      @apply text-green font-semibold text-heading4;
+    }
+
+    & > .footerDataWrapper {
+      @apply grid lg:grid-cols-[30%_1fr] max-lg:gap-[2rem] gap-[8rem] mb-10;
+
+      & > .descriptionWrapper {
+        @apply flex flex-col gap-4 max-md:items-center;
+        @media (min-width: 1441px) {
+          @apply pl-8;
+        }
+
+        & > .description {
+          @apply text-caption1 text-gray max-md:text-center;
+        }
+      }
+
+      & > .footerLinks {
+        @apply grid grid-cols-2 md:grid-cols-3 gap-12 gap-y-10;
+        @media (min-width: 1441px) {
+          @apply gap-2;
+        }
+
+        & > .footerLinkSection {
+          @apply flex flex-col gap-4;
+
+          & > .link {
+            @apply hover:text-gray/70 duration-300;
+          }
+        }
+      }
+    }
+
+    & > .copyrightWrapper {
+      @apply flex max-md:flex-col items-center md:justify-between gap-2 md:gap-4 text-gray;
+
+      & > .copyrightLinks {
+        @apply flex gap-4 justify-center items-center;
+
+        & > .copyrightLink {
+          @apply text-caption2;
+        }
+      }
+    }
+  }
+  & > .fpimages {
+    @media (max-width: 1440px) {
+      @apply hidden;
+    }
+  }
+} */
+
+.footerWrapper {
+  @apply flex bg-skin relative pt-8 max-md:pt-4;
+
+  & > .footer {
+    @apply pt-8 max-md:pt-4 pb-16 max-md:pb-8 flex flex-col gap-4 w-full;
+
+    & > .footerDataWrapper {
+      @apply flex justify-between w-full max-md:flex-col max-md:gap-[2rem] items-center;
+
+      & > .descriptionWrapper {
+        @apply flex flex-col gap-4 max-md:items-center md:w-[30%];
+        @media (min-width: 1441px) {
+          @apply pl-8;
+        }
+
+        & > .description {
+          @apply text-caption1 text-gray max-md:text-center;
+        }
+      }
+
+      & > .footerLinks {
+        @apply flex justify-between md:w-[60%] w-full flex-wrap;
+        @media (min-width: 1441px) {
+          @apply pr-8;
+        }
+        & > .footerLinkSection {
+          @apply flex flex-col gap-4 max-sm:p-2;
+
+          & > .link {
+            @apply hover:text-gray/70 duration-300;
+          }
+        }
+      }
+    }
+  }
+  & > .fpimages {
+    @media (max-width: 1440px) {
+      @apply hidden;
+    }
+  }
+  .rightfooterlink {
+    @apply flex flex-col gap-4 max-sm:p-2;
+    @media (max-width: 430px) {
+      @apply mx-auto;
+    }
+  }
+}

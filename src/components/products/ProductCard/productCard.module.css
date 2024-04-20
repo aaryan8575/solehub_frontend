@@ -1,0 +1,46 @@
+.main {
+  @apply shadow-lg w-full max-w-[327px]  rounded-xl overflow-hidden flex flex-col gap-2;
+}
+.productWrapper {
+  @apply flex flex-col gap-4 w-full items-center py-6 px-4;
+}
+.productImage {
+  @apply aspect-square w-full relative;
+  /* transition: 0.3s ease-in-out; */
+}
+
+.content {
+  @apply flex flex-col items-center gap-2 bg-slate-600;
+}
+.productName {
+  @apply text-caption1 font-semibold;
+}
+.productPrice {
+  @apply font-bold;
+}
+
+& > .btnWrapper {
+  @apply opacity-0;
+  /* transition: 0.3s ease-in-out; */
+}
+
+/* .main::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 100%;
+  bottom: 0;
+  transition: 0.3s ease-in-out;
+  @apply bg-greenLight rounded-lg;
+}
+.main:hover::before {
+  height: 65%;
+  z-index: -1;
+}
+.main:hover .productImage {
+  @apply -translate-y-[10%];
+}
+
+.main:hover .btnWrapper {
+  @apply opacity-100 translate-y-1/2;
+} */

@@ -1,0 +1,23 @@
+.navLinks {
+  @apply max-lg:hidden flex items-center gap-8;
+  & > .link {
+    @apply relative text-black hover:text-primary w-max pb-1;
+
+    /* &::before {
+      content: "";
+      @apply absolute h-[3px] w-0 left-0 bottom-0 bg-yellow duration-300;
+    }
+
+    &:hover::before {
+      @apply w-full;
+    } */
+  }
+}
+
+.active {
+  @apply !text-primary;
+
+  &::before {
+    @apply !w-full;
+  }
+}

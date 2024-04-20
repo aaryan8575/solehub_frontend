@@ -1,0 +1,25 @@
+.main{
+    @apply flex flex-col gap-6;
+
+    & > .detailsTag{
+        @apply  focus:text-primary;
+
+        & > .summaryTag{
+            @apply flex justify-between w-full text-caption2 text-black items-center list-none hover:text-primary;
+        
+
+        .subtitlediv{
+            @apply flex text-caption1 text-black hover:text-primary hover:cursor-pointer;
+        }
+
+        .spanDiv{
+            @apply flex  transition duration-300 ease-in-out pr-2;
+        }
+
+
+    }
+    }
+
+
+
+}

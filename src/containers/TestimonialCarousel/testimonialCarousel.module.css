@@ -1,0 +1,49 @@
+.svg_bg {
+  width: 45%;
+  position: absolute;
+  top: 7%;
+  right: 0;
+  bottom: 0;
+  left: 48%;
+  background-image: url("/icons/testimonial_bg.svg");
+  background-size: contain;
+  background-position: center;
+  background-size: 100%;
+  max-width: 777px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: -1;
+}
+@media (max-width: 1024px) {
+  .svg_bg {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .svg_bg {
+    max-width: 630px;
+    min-width: 530px;
+  }
+}
+
+/* .heading {
+  @apply text-center text-heading5 font-semibold mb-32 max-sm:mb-24;
+} */
+
+.swiper_cs {
+  @apply w-[83%] sm:w-[80%] overflow-x-hidden;
+}
+
+.btnIcon {
+  @apply w-6 aspect-square;
+}
+.testimonial_slide {
+  transition: transform 0.3s;
+
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.swiper_slide_active {
+  transform: scale(0.5);
+}

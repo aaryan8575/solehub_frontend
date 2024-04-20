@@ -1,0 +1,9 @@
+.inputGroup {
+  & .label {
+    @apply font-normal text-gray mb-3;
+
+    /* &.label_required {
+      @apply after:content-["*"];
+    } */
+  }
+}

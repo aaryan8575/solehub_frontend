@@ -1,0 +1,14 @@
+.mainwrapper {
+  @apply max-sm:w-full sm:w-[90%] mx-auto;
+  & > .image_group {
+    @apply mt-5;
+  }
+
+  & .main_image {
+    @apply w-full bg-white mx-auto relative aspect-square;
+
+    & .slide {
+      @apply w-full relative aspect-[16/9];
+    }
+  }
+}
