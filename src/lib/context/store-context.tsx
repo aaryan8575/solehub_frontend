@@ -265,7 +265,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
       ensureCart()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  })
+  }, [])
 
   const addItem = ({ variantId, quantity, callback }: VariantInfoProps) => {
     addLineItem.mutate(
