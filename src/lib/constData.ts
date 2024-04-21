@@ -1090,7 +1090,7 @@ export const Blogsdata = [
 
 //-----------------------------TERMS AND CONDITION--------------------------//
 export const termsPageBanner = {
-  backgroundBannerImage: "",
+  backgroundBannerImage: "/images/bannerImage2.jpg",
   heading: "Terms & Condition",
 }
 
