@@ -15,15 +15,22 @@ type Props = {
 }
 
 const RelatedProduct = ({ productDetailData }: Props) => {
+  // const { products} = useProducts({
+  //   category_id: productDetailData?.categories?.map((x) => x.id),
+  // expand: "categories,variants",
+  // })
   const SALES_CHANNEL_ID = process.env.NEXT_PUBLIC_SALES_CHANNEL_ID || ""
   const { products: productList } = useProducts({
-    limit: 10,
-    category_id: productDetailData?.categories?.map((x) => x.id),
-    expand: "categories,variants",
     sales_channel_id: [SALES_CHANNEL_ID],
+    limit: 8,
   })
+  const productcollection = productList?.filter(
+    (x) => x.collection_id == productDetailData?.collection_id
+  )
 
-  const products = productList?.filter((x) => x.id !== productDetailData?.id)
+  const products = productcollection?.filter(
+    (x) => x.id !== productDetailData?.id
+  )
 
   return (
     <div className={style.section}>

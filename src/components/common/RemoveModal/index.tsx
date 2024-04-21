@@ -7,8 +7,6 @@ type Props = {
   showModal: boolean
   closeModal: () => void
   removeItem: () => void
-  title: string
-  description: string
   button_name: string
 }
 
@@ -16,9 +14,7 @@ const RemoveModal = ({
   showModal,
   closeModal,
   removeItem,
-  title,
   button_name,
-  description,
 }: Props) => {
   return (
     <Modal size="small" isOpen={showModal} close={closeModal}>
@@ -38,8 +34,7 @@ const RemoveModal = ({
         </Button>
         <Button
           variant="fill"
-          color="primary"
-          className="duration-300"
+          className="duration-300 bg-rose-400"
           onClick={removeItem}
         >
           {button_name}

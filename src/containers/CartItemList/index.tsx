@@ -14,7 +14,7 @@ const CartItemList = () => {
 
   if (!cart || !cart?.id?.length || isLoading) {
     return (
-      <div className="flex flex-col gap-8 items-center justify-center h-full p-4">
+      <div className="flex flex-col gap-4 items-center justify-center h-full bg-gray/5 rounded-lg py-40">
         <span>
           <LoadingSpinner />
         </span>
@@ -26,7 +26,10 @@ const CartItemList = () => {
   return (
     <>
       {cart.items.length ? (
-        <ul role="list" className="m-4 flex flex-col gap-2">
+        <ul
+          role="list"
+          className="divide-y divide-gray/30 bg-primary/5 rounded-lg mx-4 flex flex-col p-2"
+        >
           {items &&
             items
               .sort((a, b) => {
@@ -35,15 +38,10 @@ const CartItemList = () => {
               .map((item) => <CartItem key={item.id} item={item} />)}
         </ul>
       ) : (
-        <div className="flex flex-col gap-8 items-center justify-center h-full p-4">
-          <div className="flex-1 flex flex-col items-center justify-center">
+        <div className="flex flex-col gap-8 items-center justify-center h-full p-2">
+          <div className="flex-1 flex flex-col items-center justify-center gap-2">
             <span>
-              <Image
-                src="/images/bag1.png"
-                alt="bagimage"
-                width={200}
-                height={200}
-              />
+              <CartIcon className="w-20 h-20" />
             </span>
             <div className="flex flex-col items-center">
               <h5>Your bag is empty.</h5>

@@ -22,7 +22,7 @@ export type ProductCategoryWithChildren = Omit<
 // The MEDUSA_FF_MEDUSA_V2 flag is set in the .env file of both the storefront and the server. It is used to determine whether to use the Medusa API or the Medusa V2 Modules.
 let MEDUSA_V2_ENABLED = false
 
-const SALES_CHANNE_ID = [process.env.NEXT_PUBLIC_SALES_CHANNEL_ID]
+const SALES_CHANNEL_ID = [process.env.NEXT_PUBLIC_SALES_CHANNEL_ID]
 
 if (process.env.MEDUSA_FF_MEDUSA_V2) {
   MEDUSA_V2_ENABLED = process.env.MEDUSA_FF_MEDUSA_V2 === "true"
@@ -35,7 +35,6 @@ export const MEDUSA_BE_URL =
 const API_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:8000"
 
 // sales channel id
-const sales_channel = process.env.NEXT_PUBLIC_SALES_CHANNEL_ID || ""
 
 /**
  * Fetches a product by handle, using the Medusa API or the Medusa Product Module, depending on the feature flag.
@@ -58,8 +57,8 @@ export async function getProductByHandle(
   const { products } = await medusaRequest("GET", "/products", {
     query: {
       handle,
-      expand: "categories,images,variants",
-      sales_channel_id: [sales_channel],
+      sales_channel_id: SALES_CHANNEL_ID,
+      // expand: "categories,images,variants",
     },
   })
     .then((res) => res.body)
@@ -156,7 +155,6 @@ export async function getProductsList({
       query: {
         limit,
         offset: pageParam,
-        sales_channel_id: [sales_channel],
         ...queryParams,
       },
     }

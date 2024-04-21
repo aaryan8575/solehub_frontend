@@ -23,14 +23,12 @@ const Price = ({ id }: Props) => {
   }, [price])
 
   return (
-    <>
-      <p className=" flex  gap-4 text-heading6">
-        {selectedPrice?.calculated_price || "--"}
-        {selectedPrice?.calculated_price !== selectedPrice?.original_price && (
-          <p className="">{selectedPrice?.original_price || "--"}</p>
-        )}
-      </p>
-    </>
+    <p className="text-heading6">
+      {selectedPrice?.calculated_price || "---"}
+      {selectedPrice?.calculated_price !== selectedPrice?.original_price && (
+        <p>{selectedPrice?.original_price || "---"}</p>
+      )}
+    </p>
   )
 }
 

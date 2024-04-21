@@ -13,7 +13,7 @@ import {
 import { FieldValues, useForm } from "react-hook-form"
 import Input from "@/components/common/formElements/Input"
 import Button from "@/components/common/Button"
-import Fleurveda from "@/public/icons/FleurvedaLogo.svg"
+import Logo from "@/public/icons/SolehubLogo.svg"
 import {
   emailRegex,
   nameRegex,
@@ -80,7 +80,7 @@ const Register = ({ query }: { query: string }) => {
         </div>
       )}
       <div className="flex justify-center">
-        <Fleurveda className="h-24" />
+        <Logo className="h-12 text-primary" />
       </div>
       <div className="flex flex-col gap-2 items-center">
         <p className="text-heading3 ">Create Account</p>
@@ -103,7 +103,6 @@ const Register = ({ query }: { query: string }) => {
           <Input
             label="First name"
             type="text"
-            placeholder="First Name"
             {...register("first_name", {
               required: {
                 message: "first_name is required...",
@@ -128,7 +127,6 @@ const Register = ({ query }: { query: string }) => {
           <Input
             label="Last name"
             type="text"
-            placeholder="Last Name"
             {...register("last_name", {
               required: {
                 message: "last_name is required...",
@@ -152,7 +150,6 @@ const Register = ({ query }: { query: string }) => {
           />
           <Input
             label="Email"
-            placeholder="Enter Email"
             {...register("email", {
               required: {
                 message: "Email is required...",
@@ -169,7 +166,6 @@ const Register = ({ query }: { query: string }) => {
           <Input
             label="Phone"
             type="tel"
-            placeholder="Enter Number"
             {...register("phone", {
               required: {
                 message: "phone number is required...",
@@ -187,7 +183,6 @@ const Register = ({ query }: { query: string }) => {
           <Input
             label="Password"
             type="password"
-            placeholder="Enter Password"
             {...register("password", {
               required: {
                 message: "Password is required...",
@@ -216,7 +211,7 @@ const Register = ({ query }: { query: string }) => {
         )}
 
         <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Fleurveda&apos;s{" "}
+          By creating an account, you agree to SoleHub &apos;s{" "}
           <Link href="/content/privacy-policy" className="text-primary">
             Privacy Policy
           </Link>{" "}
@@ -237,8 +232,7 @@ const Register = ({ query }: { query: string }) => {
       <span className="text-center text-gray-700 text-small-regular mt-6">
         Already a member?{" "}
         <button
-          // onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          onClick={() => router.replace("/login")}
+          onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="text-primary"
         >
           Sign in

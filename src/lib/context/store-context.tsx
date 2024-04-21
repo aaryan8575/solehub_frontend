@@ -126,7 +126,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
     await updateCart.mutateAsync(
       {
         region_id: regionId,
-        sales_channel_id: process.env.NEXT_PUBLIC_SALES_CHANNEL_ID,
+        // sales_channel_id: process.env.NEXT_PUBLIC_SALES_CHANNEL_ID,
       },
       {
         onSuccess: ({ cart }) => {

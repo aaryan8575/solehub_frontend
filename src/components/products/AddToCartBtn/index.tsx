@@ -16,11 +16,10 @@ import {
 import CounterBtn from "../CounterBtn"
 import Link from "next/link"
 import LoadingSpinner from "@/components/common/LoadingSpinner"
-import { sendGAEvent } from "@next/third-parties/google"
 
 type Props = {
   type?: "icon" | "text"
-  product: PricedProduct
+  product?: PricedProduct
   varient?: "primary" | "outlined"
 }
 
@@ -48,14 +47,14 @@ const AddToCartBtn = ({
   const handleAddToCart = useCallback(
     (e) => {
       e.preventDefault()
+
       setLoading(true)
       addToCart(() => {
-        setLoading(false)
         if (linkRef && linkRef.current) {
           linkRef.current.click()
         }
+        setLoading(false)
       })
-      sendGAEvent({ event: "add_to_cart", value: "xyz" })
     },
     [addToCart]
   )
@@ -74,7 +73,7 @@ const AddToCartBtn = ({
       {type === "icon" ? (
         <div className="flex">
           <Button
-            variant="round"
+            variant="icon"
             color="dark"
             onClick={handleAddToCart}
             disabled={!inStock || !variant || !!loading}

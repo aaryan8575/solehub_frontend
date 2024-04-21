@@ -8,9 +8,9 @@ type Props = {
 const SectionHeader: React.FC<Props> = ({ heading, desc }: Props) => {
   return (
     <>
-      <div className="flex flex-col items-center sm:max-w-[60%] mx-auto">
-        {heading && <h3>{heading}</h3>}
-        {desc && <p className="text-center ">{desc}</p>}
+      <div className="flex flex-col items-center">
+        {heading && <h2>{heading}</h2>}
+        {desc && <p>{desc}</p>}
       </div>
     </>
   )

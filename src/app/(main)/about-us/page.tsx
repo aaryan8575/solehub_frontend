@@ -1,20 +1,21 @@
-import SectionHeader from "@/components/common/SectionHeader"
-import AboutUsBanner from "@/containers/AboutUsBanner"
+import AboutUsContent from "@/components/AboutUsContent"
 import TestimonialCarousel from "@/containers/TestimonialCarousel"
-import WhyChooseUs from "@/containers/WhyChooseUs"
+import WhyChooseOurProduct from "@/containers/WhyChooseOurProduct"
 import { Metadata } from "next"
 import React from "react"
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "About our Bea You",
+  description: "About our SoleHub",
 }
 
 const page = () => {
   return (
-    <section>
-      <SectionHeader heading="Comming Soon..." />
-    </section>
+    <>
+      <AboutUsContent />
+      <WhyChooseOurProduct />
+      <TestimonialCarousel />
+    </>
   )
 }
 

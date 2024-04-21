@@ -1,145 +1,188 @@
-"use client"
-import React, { useState, useEffect } from "react"
 import AddToCartBtn from "../AddToCartBtn"
 import Price from "@/components/Price"
 import ReactMarkdown from "react-markdown"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
-import Rating from "../Rating"
-import Heart from "../../../../public/icons/heartbtn.svg"
-import Button from "@/components/common/Button"
-import Drop from "../../../../public/icons/drop.svg"
-import Circle from "../../../../public/icons/circle.svg"
-import Down from "../../../../public/icons/chevron-down.svg"
-import Share from "@/public/icons/share.svg"
+import style from "./productDetails.module.css"
 import WishlistBtn from "@/components/common/WishlistBtn"
-import Sharebtn from "@/components/common/Sharebtn"
-import DownArrow from "@/public/icons/chevron-down.svg"
+import ShareBtn from "@/components/common/ShareBtn"
+import ShareButton from "@/components/common/ShareBtn"
 type ProductTemplateProps = {
   product: PricedProduct
-  rating: number
-  reviewCount: number
 }
 
-const ProductDetails = ({
-  product,
-  rating,
-  reviewCount,
-}: ProductTemplateProps) => {
-  // const [dropdown3Open, setDropdown3Open] = useState(false)
-
-  // const toggleDropdown3 = () => {
-  //   setDropdown3Open(!dropdown3Open)
-  // }
-
-  useEffect(() => {
-    const All_Details = document.querySelectorAll("details")
-
-    const toggleOpenOneOnly = (e: Event) => {
-      const target = e.target as HTMLDetailsElement
-
-      if (target.open) {
-        All_Details.forEach((deet) => {
-          if (deet !== target && deet.open) deet.open = false
-        })
-      }
-    }
-
-    All_Details.forEach((deet) => {
-      deet.addEventListener("toggle", toggleOpenOneOnly)
-    })
-    return () => {
-      // Clean up the event listeners when the component unmounts
-      All_Details.forEach((deet) => {
-        deet.removeEventListener("toggle", toggleOpenOneOnly)
-      })
-    }
-  }, [])
-
+const ProductDetails = ({ product }: ProductTemplateProps) => {
   return (
-    <div className="lg:ml-8 flex flex-col justify-between gap-3">
-      <div className="font-bold max-md:hidden flex justify-between items-center">
-        <h3>{product?.title}</h3>
-        <Sharebtn />
+    <div className="flex flex-col justify-between gap-4">
+      <div className="flex items-center justify-between max-md:hidden ">
+        <h3 className="font-bold mb-0">{product?.title}</h3>
+        <ShareButton url="" />
       </div>
-      <Rating reviewCount={reviewCount} rating={rating} />
-      <p className="font-bold max-md:hidden text-caption1">
-        {product?.subtitle}
-      </p>
-
+      <p className="font-bold text-body2">{product?.subtitle}</p>
       <div className="flex gap-4 items-center">
         <Price id={product.id as string} />
-        <div className="flex items-center">(MRP including all Taxes)</div>
+        <WishlistBtn product_id={product.id!} item={product} />
       </div>
-
-      {product?.options?.map((option) => (
-        <p key={option.id} className="">
-          <span className="font-bold capitalize ">{option?.title}:</span>
-          <span className="flex flex-wrap gap-4 ">
-            {option.values.map((value) => (
-              <span
-                key={value.id}
-                className="border px-4  hover:bg-gold hover:border-gold hover:text-white"
-              >
-                {value?.value}
-              </span>
-            ))}
-          </span>
-        </p>
-      ))}
-
+      {/* <Rating reviewCount={5} rating={3} /> */}
       <div>
-        <div>RECOMMENDED FOR: </div>
-        <div className="flex text-black gap-1 ">
-          <div className="flex gap-1 text-gray text-caption1 max-sm:text-caption2">
-            <Circle className="mt-1 max-sm:mt-0 " />
-            <div>All types of skins</div>
-          </div>
-          <div className="flex gap-1 text-gray text-caption1 max-sm:text-caption2 ">
-            <Drop className="mt-1 max-sm:mt-0" />
-            <div>Combo to Dryness</div>
-          </div>
-          <div className="flex gap-1 text-gray text-caption1 max-sm:text-caption2 ">
-            <Drop className="mt-1 max-sm:mt-0" />
-            <div> Dryness</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex gap-4 justify-between">
-        <AddToCartBtn product={product} varient="primary" />
-        <WishlistBtn product_id={product.id!} item={product} variant="red" />
-      </div>
-
-      <div className="flex flex-col gap-3 sm:h-56 mt-4 ">
-        <details className="group" open>
-          <summary className="w-full px-3 flex justify-between items-center py-2 group-open:bg-secondary group-open:border-none border-gray/40 border-y">
-            <div className="font-bold text-caption1">WHAT MAKES IT GOOD</div>
-            <div className="group-open:rotate-180">
-              <DownArrow className="h-5 w-5" />
-            </div>
-          </summary>
-          <div className="py-2 text-btn text-gray px-3 text-justify">
-            {product?.description}
-          </div>
-        </details>
-        {Object.keys(product?.metadata)?.map((key) => {
+        {product.variants?.map((variant) => {
           return (
-            <details key={key} className="group">
-              <summary className="w-full px-3 flex justify-between items-center py-2 group-open:bg-secondary group-open:border-none border-gray/40 border-y">
-                <div className="font-bold text-caption1">{key}</div>
-                <div className="group-open:rotate-180">
-                  <DownArrow className="h-5 w-5" />
-                </div>
-              </summary>
-              <div className="py-2 px-3 text-justify text-btn text-gray">
-                {product?.metadata[key]}
-              </div>
-            </details>
+            <>
+              {variant.options?.map((option, index) => {
+                return (
+                  <p key={option.id} className="flex flex-wrap gap-2">
+                    <span className="font-bold capitalize">
+                      {product?.options && product?.options[index].title}:
+                    </span>
+                    <span>{option.value}</span>
+                  </p>
+                )
+              })}
+            </>
           )
         })}
+        <p className="flex flex-wrap gap-2">
+          <span className="font-bold">Category: </span>
+          {product?.categories?.map((category) => {
+            return <span key={category.id}>{category.name}</span>
+          })}
+        </p>
       </div>
+      <AddToCartBtn product={product} />
+      <div className={`${style.prose} prose`}>
+        <ReactMarkdown>{product?.description}</ReactMarkdown>
+      </div>
+      {product.metadata &&
+        Object.entries(product?.metadata).map(([key, value]) => (
+          <span key={key} className="flex flex-wrap gap-2">
+            {/* <p className="font-bold uppercase">{key}:</p> */}
+            <div className={`${style.prose} prose`}>
+              <ReactMarkdown>{value}</ReactMarkdown>
+            </div>
+          </span>
+        ))}
     </div>
   )
 }
 
 export default ProductDetails
+
+// "use client"
+// import React, { useState } from "react"
+// import AddToCartBtn from "../AddToCartBtn"
+// import Price from "@/components/Price"
+// import ReactMarkdown from "react-markdown"
+// import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
+// import Rating from "../Rating"
+// import Star from "@/public/icons/star.svg"
+// import Down from "../../../../public/icons/chevron-down.svg"
+// import WishlistBtn from "@/components/common/WishlistBtn"
+// import ShareButton from "@/components/common/ShareBtn"
+// type ProductTemplateProps = {
+//   product: PricedProduct
+//   rating: number
+//   reviewCount: number
+// }
+
+// const ProductDetails = ({
+//   product,
+//   rating,
+//   reviewCount,
+// }: ProductTemplateProps) => {
+//   const [dropdown3Open, setDropdown3Open] = useState(false)
+
+//   const toggleDropdown3 = () => {
+//     setDropdown3Open(!dropdown3Open)
+//   }
+
+//   return (
+//     <div className=" flex flex-col justify-between gap-4">
+//       <h3 className="font-bold max-md:hidden m-0 py-2 items-center flex justify-between">
+//         {product?.title}
+//         <ShareButton url="" />
+//       </h3>
+//       {/* <Rating reviewCount={reviewCount} rating={rating} /> */}
+//       {/* <div>
+//         <p className="flex items-center gap-1">
+//           Rating : 4.5
+//           <span>
+//             <Star className="w-5 text-primary" />
+//           </span>
+//         </p>
+//       </div> */}
+//       <p className="font-bold max-md:hidden text-body2">{product?.subtitle}</p>
+//       <div className=" flex gap-4 items-center">
+//         <Price id={product.id as string} />
+//         <div className=" flex items-center"> ( MRP including all Taxes) </div>
+//       </div>
+
+//       {product?.options?.map((option) => {
+//         return (
+//           <p key={option.id} className="text-slate-950">
+//             <span className="font-bold capitalize ">{option?.title}: </span>
+
+//             <span className="flex flex-wrap gap-4">
+//               {option.values.map((value) => {
+//                 return (
+//                   <span
+//                     key={value.id}
+//                     className="border px-4 py-1 rounded-md hover:bg-primary hover:border-footblack hover:text-white"
+//                   >
+//                     {value?.value}
+//                   </span>
+//                 )
+//               })}
+//             </span>
+//           </p>
+//         )
+//       })}
+
+//       {/* <div>
+//         <div>RECOMMENDED FOR: </div>
+//         <div className="flex text-black gap-1 ">
+//           <div className="flex gap-1 text-gray text-caption1 max-sm:text-caption2">
+//             <Circle className="mt-1 max-sm:mt-0 " />
+//             <div>All types of skins</div>
+//           </div>
+//           <div className="flex gap-1 text-gray text-caption1 max-sm:text-caption2 ">
+//             <Drop className="mt-1 max-sm:mt-0" />
+//             <div>Combo to Dryness</div>
+//           </div>
+//           <div className="flex gap-1 text-gray text-caption1 max-sm:text-caption2 ">
+//             <Drop className="mt-1 max-sm:mt-0" />
+//             <div> Dryness</div>
+//           </div>
+//         </div>
+//       </div> */}
+
+//       <div className="flex gap-4 justify-between">
+//         <AddToCartBtn product={product} varient="primary" />
+//         <WishlistBtn product_id={product.id!} item={product} variant="red" />
+//       </div>
+
+//       <div>
+//         <button
+//           onClick={toggleDropdown3}
+//           className={`w-full text-left px-3 text-subtitle2 flex justify-between items-center py-2 ${
+//             dropdown3Open ? "bg-secondary" : "border-gray border-y-[1px]"
+//           }`}
+//         >
+//           WHAT MAKES IT GOOD
+//           <Down
+//             className={`w-7 h-7 transform ${
+//               dropdown3Open ? "rotate-180 " : ""
+//             }`}
+//           />
+//         </button>
+//         {dropdown3Open && (
+//           <div>
+//             <span className={`prose-sm overflow-hidden`}>
+//               <ReactMarkdown>{product?.description}</ReactMarkdown>
+//             </span>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default ProductDetails

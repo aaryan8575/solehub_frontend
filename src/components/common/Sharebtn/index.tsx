@@ -1,33 +1,48 @@
 "use client"
 import React from "react"
-import Button from "../Button"
 import Share from "@/public/icons/share.svg"
-import { usePathname } from "next/navigation"
+import { toast } from "react-toastify"
+import useShare from "@/lib/hooks/useShare"
+type ShareProps = {
+  url: string
+}
+const ShareButton = ({ url }: ShareProps) => {
+  const { share, isSupported, isReady, isShared } = useShare({
+    onSuccess: () => {
+      toast.success("Sharing successful!")
+    },
+    onError: (error) => {
+      toast.error("Error sharing:", error)
+    },
+    fallback: () => {
+      toast.success("Fallback sharing method used.")
+    },
+  })
 
-type Props = {}
-
-const Sharebtn = (props: Props) => {
-  const pathname = usePathname()
-
-  const handleShareClick = () => {
-    if (navigator.share) {
-      navigator
-        .share({
-          title: "Share this page",
-          text: "Check out this page!",
-          url: pathname,
-        })
-        .then(() => console.log("Share successful"))
-        .catch((error) => console.error("Error sharing:", error))
+  const handleClick = () => {
+    if (isSupported && isReady) {
+      share({
+        title: "Example Title",
+        text: "Example Text",
+        url: `${url}`,
+      })
     } else {
-      console.warn("Web Share API not supported in this browser")
+      toast.error("Sharing not supported or ready.")
     }
   }
+
   return (
-    <Button onClick={handleShareClick} variant="text" className="!px-2 !py-0">
-      <Share className="w-6" />
-    </Button>
+    <>
+      <button
+        type="button"
+        onClick={handleClick}
+        disabled={!isSupported || isShared}
+        className="self-center"
+      >
+        <Share className="w-6" />
+      </button>
+    </>
   )
 }
 
-export default Sharebtn
+export default ShareButton

@@ -26,9 +26,9 @@
   }
 }
 
-/* .heading {
-  @apply text-center text-heading5 font-semibold mb-32 max-sm:mb-24;
-} */
+.heading {
+  @apply text-center text-heading2 font-semibold mb-32 max-sm:mb-24;
+}
 
 .swiper_cs {
   @apply w-[83%] sm:w-[80%] overflow-x-hidden;

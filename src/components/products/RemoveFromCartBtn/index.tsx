@@ -2,11 +2,11 @@
 import Button from "@/components/common/Button"
 import { useStore } from "@/lib/context/store-context"
 import Modal from "@/modules/common/components/modal"
-import Trash from "@/modules/common/icons/trash"
+import Trash from "@/public/icons/trash.svg"
 import { Dialog } from "@headlessui/react"
 import { useState } from "react"
 import RemoveModal from "../../common/RemoveModal"
-import TrashIcon from "@/public/icons/trash.svg"
+import CancelIcon from "@/public/icons/cancel.svg"
 
 const RemoveFromCartBtn = ({ id }: { id: string }) => {
   const { deleteItem } = useStore()
@@ -27,22 +27,16 @@ const RemoveFromCartBtn = ({ id }: { id: string }) => {
 
   return (
     <>
-      <button
-        className="flex items-center gap-x-1 text-red-500"
-        onClick={openModal}
-      >
-        {/* <Trash size={14} />
-        <span>Remove</span> */}
-        <TrashIcon className="w-5 h-5" />
-        <span className="max-sm:hidden">Remove</span>
+      <button className="flex items-center gap-x-1" onClick={openModal}>
+        <span className="sr-only">Remove</span>
+        <Trash className="h-6 w-6 hover:text-rose-500" />
+        {/* <CancelIcon className="w-6 h-6" /> */}
       </button>
       <RemoveModal
-        title="Remove item?"
-        description="Are you sure you would like to remove this item?"
-        button_name="Remove"
         showModal={showModal}
         closeModal={closeModal}
         removeItem={removeItem}
+        button_name="Remove"
       />
     </>
   )

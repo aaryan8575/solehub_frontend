@@ -3,7 +3,7 @@ import DesktopNav from "./Desktopnav"
 
 const Header = () => {
   return (
-    <header className="bg-floralWhite sticky top-0 z-40 shadow shadow-gold">
+    <header className="bg-white sticky top-0 z-40 shadow shadow-footblack">
       <DesktopNav data={navbarData} />
     </header>
   )

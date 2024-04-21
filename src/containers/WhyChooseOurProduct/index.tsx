@@ -1,87 +1,81 @@
 import React from "react"
-import LeafPrimary from "@/public/icons/leafprimary.svg"
 import SectionHeader from "@/components/common/SectionHeader"
 import Image from "next/image"
-import Leaf from "@/public/icons/leaf1.svg"
-import QualityProduct from "@/public/icons/qualityproducts.svg"
-import FlowWork from "@/public/icons/flowwework.svg"
 
 type Props = {}
 
 const WhyChooseOurProduct = (props: Props) => {
   return (
-    <section className="bg-secondary flex flex-col gap-10 pb-0 pt-8 max-md:py-8">
-      <div className="text-center">
+    <section className="flex flex-col gap-10 pb-0 bg-footblack">
+      <div className="text-center *:text-white">
         <SectionHeader
           heading="Why Choose Our Product"
           desc="Lorem ipsum dolor sit amet consectetur. Id mauris bibendum mauris maecenas libero etiam id sagittis."
         />
       </div>
-      <div className="flex gap-[2rem] lg:gap-[8rem] items-center max-md:flex-col">
+      <div className="flex gap-[2rem] lg:gap-[8rem] items-center max-md:flex-col *:text-white">
         <div className="flex flex-col gap-24 max-sm:gap-10">
           <div className="flex flex-col gap-2 items-center text-center">
-            <div className="bg-primary p-4 rounded-full">
-              <LeafPrimary className="w-5 h-5" />
-            </div>
+            {/* <div className="bg-white p-4 rounded-full">
+              <LeafIcon className="w-5 h-5" />
+            </div> */}
             <p className="text-subtitle2">Who we are</p>
             <p className="text-caption1">
-              Lorem ipsum dolor sit amet consectetur. Id mauris bibendum mauris
-              maecenas libero etiam id sagittis.
+              Elevate every step with chic, comfortable footwear – where style,
+              quality, and comfort unite flawlessly.
             </p>
           </div>
           <div className="flex flex-col gap-2 items-center text-center">
-            <div className="bg-primary p-4 rounded-full">
-              <FlowWork className="w-5 h-5" />
-            </div>
+            {/* <div className="bg-white p-4 rounded-full">
+              <LeafIcon className="w-5 h-5" />
+            </div> */}
             <p className="text-subtitle2">How we work</p>
             <p className="text-caption1">
-              Lorem ipsum dolor sit amet consectetur. Id mauris bibendum mauris
-              maecenas libero etiam id sagittis.
+              Efficiency is our ethos. At SoleHub, we streamline every step to
+              swiftly bring you fashion-forward footwear.
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-center bg-skin rounded-t-full w-full">
-          <div className="flex max-md:w-[80%] w-full flex-col items-center text-center gap-4 pt-24 px-6">
-            <p className="text-subtitle1">Our Story</p>
+        <div className="flex flex-col items-center bg-cyan-200 rounded-t-full w-full">
+          <div className="flex w-full flex-col items-center *:text-footblack text-center gap-4 pt-24 px-6">
+            <p className="text-subtitle2">Our Story</p>
             <p className="text-caption1">
-              Lorem ipsum dolor sit amet consectetur. Porta vivamus dapibus
-              venenatis id enim a bibendum. Elit gravida ut nisl tristique
-              interdum in. Magna nisl nibh diam risus risus.
-            </p>
-            <p className="text-caption1">
-              Lorem ipsum dolor sit amet consectetur. Porta vivamus dapibus
-              venenatis id enim a bibendum.
+              SoleHub began with a shared love for shoes and a vision to
+              redefine footwear. Founded by enthusiasts driven by quality and
+              style, we embarked on a journey to curate a collection that
+              mirrors our passion. Each step in our story is woven with
+              dedication, innovation, and a commitment to exceptional footwear.
             </p>
           </div>
           <div>
             <Image
-              src="/images/serum.png"
+              src="/images/whychooseproduct.png"
               alt={"serum image"}
-              width={400}
-              height={400}
+              width={350}
+              height={350}
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-24 max-sm:gap-10">
           <div className="flex flex-col gap-2 items-center text-center">
-            <div className="bg-primary p-4 rounded-full">
-              <QualityProduct className="w-5 h-5" />
-            </div>
+            {/* <div className="bg-white p-4 rounded-full">
+              <LeafIcon className="w-5 h-5" />
+            </div> */}
             <p className="text-subtitle2">Quality Products</p>
             <p className="text-caption1">
-              Lorem ipsum dolor sit amet consectetur. Id mauris bibendum mauris
-              maecenas libero etiam id sagittis.
+              Crafted with precision, SoleHub guarantees footwear excellence.
+              Elevate your style with our commitment to unparalleled quality.
             </p>
           </div>
           <div className="flex flex-col gap-2 items-center text-center">
-            <div className="bg-primary p-4 rounded-full">
-              <Leaf className="w-5 h-5" />
-            </div>
-            <p className="text-subtitle2">100% Organic</p>
+            {/* <div className="bg-white p-4 rounded-full">
+              <LeafIcon className="w-5 h-5" />
+            </div> */}
+            <p className="text-subtitle2">Guarantee</p>
             <p className="text-caption1">
-              Lorem ipsum dolor sit amet consectetur. Id mauris bibendum mauris
-              maecenas libero etiam id sagittis.
+              Quality assured, satisfaction guaranteed - step confidently with
+              SoleHub, where excellence meets your every expectation.
             </p>
           </div>
         </div>

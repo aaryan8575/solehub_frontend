@@ -18,9 +18,12 @@ module.exports = {
         // new coloes
         primary: "rgba(var(--color-primary)/ <alpha-value>)",
         secondary: "rgba(var(--color-secondary) / <alpha-value>)",
-        gold: "rgba(var(--color-gold) / <alpha-value>)",
+        footblack: "rgba(var(--color-footblack) / <alpha-value>)",
         floralWhite: "rgba(var(--color-floral-white) / <alpha-value>)",
         skin: "rgba(var(--color-skin) / <alpha-value>)",
+        red: "rgba(var(--color-red) / <alpha-value>)",
+        gold: "rgba(var(--color-gold) / <alpha-value>)",
+        floralWhite: "rgba(var(--color-floral-white) / <alpha-value>)",
 
         //  old colors
         green: {
@@ -48,6 +51,7 @@ module.exports = {
           90: "#111827",
         },
       },
+
       fontSize: {
         heading1: [
           "clamp(2.25rem, 2.5vw + 1.25rem, 3.25rem)",
@@ -157,7 +161,7 @@ module.exports = {
           },
         ],
         xxs: [
-          "clamp(0.63rem, 0.21vw + 0.58rem, 0.75rem)",
+          "clamp(0.5rem, 0.143rem + 0.952vw, 1rem)",
           {
             lineHeight: "1.8",
             letterSpacing: "-0.01em",

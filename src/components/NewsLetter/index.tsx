@@ -12,7 +12,7 @@ type FormValues = {
   email: string
 }
 
-const NewsLetter: React.FC = (props: Props) => {
+const NewsLetter: React.FC = () => {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | undefined>(undefined)
 
@@ -26,19 +26,22 @@ const NewsLetter: React.FC = (props: Props) => {
   const submit = handleSubmit(async (data: FormValues) => {
     setSubmitting(true)
     setError(undefined)
+    console.log(data)
     setSubmitting(false)
     reset()
   })
 
   return (
-    <section className="bg-skin py-8 flex flex-col gap-14">
-      <SectionHeader
-        heading="Our Newsletter"
-        desc="Get insider access for limited edition offers, new launches, insights on  Hair, Skincare,
-Beauty and more"
-      />
+    <section className="bg-footblack">
+      <div className="*:text-white">
+        <SectionHeader
+          heading="Our Newsletter"
+          desc="Get insider access for limited edition offers, new launches, insights on  Shoes, Lofers,
+Sliders and many more"
+        />
+      </div>
       <form className={styles.newsLetterForm} onSubmit={submit}>
-        <div className="max-sm:w-full w-1/3">
+        <div className="w-[50%] ">
           <Input
             placeholder="Enter your email"
             className=""
@@ -63,12 +66,12 @@ Beauty and more"
           type="submit"
           title="Subscribe"
           isLoading={submitting}
-          className="text-caption2 sm:text-caption1 h-12 max-sm:w-full w-1/6"
+          className="text-caption2 sm:text-caption1 h-12 px-7"
         >
           Subscribe
         </Button>
         {error && (
-          <div className="text-primary text-small-regular py-2">{error}</div>
+          <div className="text-rose-500 text-small-regular py-2">{error}</div>
         )}
       </form>
     </section>

@@ -6,27 +6,12 @@ import { usePathname } from "next/navigation"
 import SectionHeader from "@/components/common/SectionHeader"
 import AnimatedLoader from "@/public/icons/animatedLoader.svg"
 
-// const ProductsGrid = () => {
-//   const [color, setcolor] = useState([
-//     "pro1",
-//     "pro2",
-//     "pro3",
-//     "pro4",
-//     "pro5",
-//     "pro6",
-//     "pro7",
-//     "pro8",
-//   ])
-//   const getRandomColor = () => {
-//     const randomIndex = Math.floor(Math.random() * color.length)
-//     return color[randomIndex]
-//   }
 type Props = {
   query: string
   category: string
 }
 
-const ProductsGrid = ({ query, category }: Props) => {
+const ProductsGrid = () => {
   // const { products } = await medusaClient.products.list().catch(() => {
   //   notFound()
   // })
@@ -35,7 +20,6 @@ const ProductsGrid = ({ query, category }: Props) => {
   const SALES_CHANNEL_ID = process.env.NEXT_PUBLIC_SALES_CHANNEL_ID || ""
   const { products, isLoading } = useProducts({
     sales_channel_id: [SALES_CHANNEL_ID],
-    q: query,
   })
   const pathname = usePathname()
   const displayProducts = products
@@ -60,11 +44,10 @@ const ProductsGrid = ({ query, category }: Props) => {
             </div>
           </div>
         )}
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-4 gap-y-4 max-[440px]:grid-cols-1 max-[440px]:gap-y-3">
-          {/* <div className="py-6 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-4 gap-y-16 max-[440px]:grid-cols-1 max-[440px]:gap-y-3 justify-center items-center"> */}
-          {/* {displayProducts && !displayProducts.length && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-6 gap-x-4 gap-y-16 max-[440px]:gap-y-3">
+          {displayProducts && !displayProducts.length && (
             <span>No Products</span>
-          )} */}
+          )}
           {displayProducts && displayProducts.length > 0 && (
             <>
               {displayProducts.map((product) => (

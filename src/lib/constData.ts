@@ -1,34 +1,29 @@
-import Facebook from "@/public/icons/facebook.svg"
-import Twitter from "@/public/icons/twitter.svg"
-import Instagram from "@/public/icons/instagram.svg"
-import Linkedin from "@/public/icons/linkedin.svg"
 import Location from "@/public/icons/location.svg"
 import Email from "@/public/icons/email.svg"
 import Phone from "@/public/icons/phone.svg"
-import { Heading } from "@medusajs/ui"
 
 //----------------------------NAVBAR----------------------------------//
 export const navbarData = {
   navLinks: [
     {
       id: 1,
+      title: "Home",
+      url: "/",
+    },
+    {
+      id: 2,
       title: "Shop",
       url: "/products",
     },
     {
-      id: 2,
+      id: 3,
       title: "About us",
       url: "/about-us",
     },
     {
-      id: 3,
-      title: "Assortments",
-      url: "/assortments",
-    },
-    {
       id: 4,
-      title: "Blog",
-      url: "/blog",
+      title: "Contact Us",
+      url: "/contact-us",
     },
   ],
 }
@@ -38,12 +33,12 @@ export const dropDownData = {
     {
       id: 1,
       title: "New In",
-      url: "/products?category=new_in",
+      url: "/new-in",
     },
     {
       id: 2,
       title: "Bestseller",
-      url: "/products?category=bestsellers",
+      url: "/bestseller",
     },
     {
       id: 3,
@@ -52,250 +47,207 @@ export const dropDownData = {
         {
           id: 1,
           title: "Gift Card",
-          url: "/products?category=gift_card",
+          url: "/gift-card",
         },
         {
           id: 2,
           title: "Wallet",
-          url: "/products?category=wallet",
+          url: "/wallet",
         },
         {
           id: 3,
           title: "Membership",
-          url: "/products?category=membership",
+          url: "/memebership",
         },
         {
           id: 4,
           title: "Reward Points",
-          url: "/products?category=reward_point",
+          url: "/reward-points",
         },
       ],
     },
     {
       id: 4,
-      title: "Fluerveda Assortments",
+      title: "Men",
       subtitle: [
         {
           id: 1,
-          title: "Body Care",
-          url: "/products?category=body_care",
+          title: "Sports",
+          url: "/products",
         },
         {
           id: 2,
-          title: "Skin Care",
-          url: "/products?category=skin_care",
+          title: "Running & Yoga",
+          url: "/products",
         },
         {
           id: 3,
-          title: "Home Care",
-          url: "/products?category=home_care",
+          title: "Lofer",
+          url: "/products",
         },
         {
           id: 4,
-          title: "Accessories",
-          url: "//products?category=accessories",
+          title: "Scandles & Floters",
+          url: "/products",
         },
         {
           id: 5,
-          title: "Gifting",
-          url: "/products?category=gift",
+          title: "Casual",
+          url: "/products",
         },
         {
           id: 6,
-          title: "Travel Essentials",
-          url: "/products?category=travel_essential",
+          title: "Formal",
+          url: "/products",
         },
       ],
     },
     {
       id: 5,
-      title: "Ayurvedic Formulations",
+      title: "Women",
       subtitle: [
         {
           id: 1,
-          title: "Essential Oils",
-          url: "/products?category=essential_oil",
+          title: "Running",
+          url: "/products",
         },
         {
           id: 2,
-          title: "Carrier Oils",
-          url: "/products?category=carrier_oil",
+          title: "Gym & Yoga",
+          url: "/products",
         },
         {
           id: 3,
-          title: "Crystal Therapy",
-          url: "/products?category=crystal_therapy",
+          title: "Heels",
+          url: "/products",
+        },
+        {
+          id: 4,
+          title: "Scandles",
+          url: "/products",
+        },
+        {
+          id: 5,
+          title: "Flats",
+          url: "/products",
+        },
+        {
+          id: 6,
+          title: "Boots",
+          url: "/products",
         },
       ],
     },
     {
       id: 6,
-      title: "Aromatherapy",
+      title: "Kids",
       subtitle: [
         {
           id: 1,
-          title: "Aromatherapy for Mind",
-          url: "/products?category=aromatherapy_for_mind",
+          title: "Sports",
+          url: "/products",
         },
         {
           id: 2,
-          title: "Aromatherapy for Chakras",
-          url: "/products?category=aromatherapy_for_chakras",
+          title: "School Shoes",
+          url: "/products",
         },
         {
           id: 3,
-          title: "Aromatherapy for Skin Concerns",
-          url: "/products?category=aromatherapy_for_skin_concerns",
+          title: "Crocs",
+          url: "/products",
         },
         {
           id: 4,
-          title: "Aromatherapy for Hair Concerns",
-          url: "/products?category=aromatherapy_for_hair_concerns",
+          title: "Flip Flops",
+          url: "/products",
         },
         {
           id: 5,
-          title: "Aromatherapy for Physical Health",
-          url: "/products?category=aromatherapy_for_physical_health",
-        },
-        {
-          id: 6,
-          title: "Aromatherapy Kits",
-          url: "/products?category=aromatherapy_kits",
+          title: "Lofer",
+          url: "/products",
         },
       ],
     },
     {
       id: 7,
-      title: "Ageless Beauty",
+      title: "Sale",
       subtitle: [
         {
           id: 1,
-          title: "Skin Care Essential",
-          url: "/products?category=skin_care_essential",
+          title: "Sports Shoes Sale",
+          url: "#",
         },
         {
           id: 2,
-          title: "Hair Care Essential",
-          url: "/products?category=hair_care_essential",
+          title: "Running Shoes Sale",
+          url: "#",
         },
         {
           id: 3,
-          title: "Anti-Aging",
-          url: "/products?category=anti_aging",
+          title: "Flip-Flops & Slider Sale",
+          url: "#",
         },
         {
           id: 4,
-          title: "Hydration",
-          url: "/products?category=hydration",
+          title: "Scandel Sale",
+          url: "#",
         },
       ],
     },
     {
       id: 8,
-      title: "Corporate",
-      subtitle: [
-        {
-          id: 1,
-          title: "Hotel",
-          url: "/products?category=hotel",
-        },
-        {
-          id: 2,
-          title: "Spa",
-          url: "/products?category=spa",
-        },
-        {
-          id: 3,
-          title: "Wellness",
-          url: "/products?category=wellness",
-        },
-        {
-          id: 4,
-          title: "Private Sector",
-          url: "/products?category=private_sector",
-        },
-        {
-          id: 5,
-          title: "Events",
-          url: "/products?category=events",
-        },
-      ],
+      title: "Customize",
+      url: "#",
     },
-    // {
-    //   id:9,
-    //   title:"Stories across the world",
-    //   subtitle:[
-    //     {
-    //       id:1,
-    //       title:"Events",
-    //       url:"/events"
-    //     },
-    //     {
-    //       id:2,
-    //       title:"Inspiring Stories",
-    //       url:"/inspiringStories"
-    //     },
-    //     {
-    //       id:3,
-    //       title:"Aromatherapist's word of mouth",
-    //       url:"/aromatherapist'swordofmouth"
-    //     },
-    //     {
-    //       id:4,
-    //       title:"Success stories",
-    //       url:"/Success-stories"
-    //     },
-    //     {
-    //       id:5,
-    //       title:"Aromatherapist",
-    //       url:"/aromatherapist"
-    //     },
-    //     {
-    //       id:6,
-    //       title:"Salons (Hair Specialist) (1+)",
-    //       url:"/salons"
-    //     },
-    //     {
-    //       id:7,
-    //       title:"Spa",
-    //       url:"/spa"
-    //     },
-    //     {
-    //       id:8,
-    //       title:"Psycotherapy",
-    //       url:"/psycotherapy"
-    //     },
-    //   ]
-
-    // },
     {
-      id: 10,
-      title: "Accessories",
+      id: 9,
+      title: "Brands",
       subtitle: [
         {
           id: 1,
-          title: "Hair",
-          url: "/products?category=hair",
+          title: "Puma",
+          url: "/products",
         },
         {
           id: 2,
-          title: "Skin",
-          url: "/products?category=skin",
+          title: "Addidas",
+          url: "/products",
         },
         {
           id: 3,
-          title: "Objects of desire",
-          url: "/products?category=objects_of_desire",
+          title: "Nike",
+          url: "/products",
         },
         {
           id: 4,
-          title: "Beauty care accesories",
-          url: "/products?category=beauty_care_accesories",
+          title: "Skechers",
+          url: "/products",
         },
         {
           id: 5,
-          title: "Hair care accesories",
-          url: "/products?category=hair_care_accesories",
+          title: "Asics",
+          url: "/products",
+        },
+        {
+          id: 6,
+          title: "Bata",
+          url: "/products",
+        },
+        {
+          id: 7,
+          title: "Crocs",
+          url: "/products",
+        },
+        {
+          id: 8,
+          title: "Woodland",
+          url: "/products",
+        },
+        {
+          id: 9,
+          title: "Campus",
+          url: "/products",
         },
       ],
     },
@@ -306,33 +258,19 @@ export const dropDownData = {
 export const homePageBanner = [
   {
     id: 1,
-    backgroundBannerImage: "/images/bannerImage.jpeg",
-    backgroundBannerImageMobile: "/images/bannerImageMobile.jpeg",
-    heading: "Look within your self and discover",
-    description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when.",
-    // actionBtn1: "View Collection asdf asdf asdf sad sdf asdf ",
-    actionBtn2: "View Collection",
+    backgroundBannerImage: "/images/bannerImage2.jpg",
+    backgroundBannerImageMobile: "/images/bannerImageMobile.jpg",
   },
   {
     id: 2,
-    backgroundBannerImage: "/images/bannerImage.jpeg",
-    backgroundBannerImageMobile: "/images/bannerImageMobile.jpeg",
-    heading: "Look within your self and discover",
-    description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when.",
-    // actionBtn1: "Explore",
-    actionBtn2: "View Collection",
+    backgroundBannerImage: "/images/bannerImage1.png",
+    backgroundBannerImageMobile: "/images/bannerImageMobile.jpg",
   },
+
   {
     id: 3,
-    backgroundBannerImage: "/images/bannerImage.jpeg",
-    backgroundBannerImageMobile: "/images/bannerImageMobile.jpeg",
-
-    heading: "Look within your self and discover",
-    description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when.",
-    actionBtn2: "View Collection",
+    backgroundBannerImage: "/images/bannerImage3.jpg",
+    backgroundBannerImageMobile: "/images/bannerImageMobile.jpg",
   },
 ]
 
@@ -392,30 +330,39 @@ export const testimonialData = {
   testimonialCards: [
     {
       id: 1,
-      description: `"I've always believed that age is just a number, and with the Ageless Radiance Serum from [Your Beauty Brand], I've found the secret to aging gracefully. This serum is nothing short of a magic potion for my skin!
-
-        I appreciate the meticulous selection of ingredients by [Your Beauty Brand]. Knowing that the serum is packed with antioxidants and nourishing elements gives me the confidence that I'm investing in the long-term health of my skin. Plus, the fact that the `,
+      description:
+        "SoleHub elevated my shoe game! Unmatched comfort and style redefine my wardrobe. The fast delivery and impressive designs keep me coming back. Exceptional craftsmanship and durability make every pair a worthwhile investment. I'm a SoleHub enthusiast for life.",
       image: "/images/person-1.png",
-      name: "Nishita",
-      designation: "CEO, Bea-You",
+      name: "John D.",
+      designation: "CEO, ABC Ltd.",
     },
     {
       id: 2,
-      description: `"I am absolutely in love with the Radiant Glow Daily Cleanser from Bea You As someone who has tried countless facewashes over the years, I can confidently say that this one stands out in a league of its own.
-      After just a few weeks of incorporating it into my daily routine,  I noticed a difference. The gentle exfoliation and deep cleansing action of this facewash have worked wonders on my skin. What's even more impressive is its ability to tackle stubborn blemishes without drying out my skin. 
-        "`,
+      description: `"SoleHub is my footwear haven! The vast selection and quality are unmatched. Whether I'm after trends or comfort, they deliver. The unique designs turn heads, and the compliments keep rolling in. My go-to for stylish, comfortable shoes that make a statement.`,
       image: "/images/person-1.png",
-      name: "Ritesh Newal",
+      name: "Sarah M.",
       designation: "CEO, Co-Founder, XYZ Inc.",
     },
     {
       id: 3,
-      description: `"I am absolutely in love with the Radiant Glow Daily Cleanser from Bea You As someone who has tried countless facewashes over the years, I can confidently say that this one stands out in a league of its own.
-      After just a few weeks of incorporating it into my daily routine,  I noticed a difference. The gentle exfoliation and deep cleansing action of this facewash have worked wonders on my skin. What's even more impressive is its ability to tackle stubborn blemishes without drying out my skin. 
-        "`,
+      description: `"SoleHub exceeded my expectations. From the seamless shopping experience to the prompt delivery, their commitment to excellence shines. The shoes not only look fantastic but also stand the test of time. A satisfied customer who will continue to choose SoleHub."`,
       image: "/images/person-1.png",
-      name: "Ritesh Newal",
-      designation: "CEO, Co-Founder, XYZ Inc.",
+      name: "Michael P.",
+      designation: "MD, ABC Inc.",
+    },
+    {
+      id: 4,
+      description: `"SoleHub's shoes are more than footwear – they're a style statement. Each pair is a conversation starter, and the compliments are constant. The unique designs set me apart, and the comfort is unmatched. SoleHub has become an integral part of my fashion identity."`,
+      image: "/images/person-1.png",
+      name: "Emily H.",
+      designation: "Sales Manager, TCS",
+    },
+    {
+      id: 5,
+      description: `"SoleHub is my first and only choice. The top-notch craftsmanship ensures durability, and the styles cater to every occasion. The compliments I receive on my SoleHub shoes are a testament to their excellence. A brand that understands and delivers on both quality and style."`,
+      image: "/images/person-1.png",
+      name: "David S.",
+      designation: "Project Manager, PQR Ltd.",
     },
   ],
 }
@@ -455,7 +402,7 @@ export const fData = {
       {
         id: 2,
         title: "Bestsellers",
-        url: "/products?category=bestsellers",
+        url: "/bestsellers",
       },
 
       {
@@ -466,140 +413,66 @@ export const fData = {
       {
         id: 4,
         title: "Blog",
-        url: "/blog",
+        url: "/",
       },
       {
         id: 5,
         title: "About us",
         url: "/about-us",
       },
-      {
-        id: 6,
-        title: "FAQs",
-        url: "/faqs",
-      },
+      // {
+      //   id: 6,
+      //   title: "FAQs",
+      //   url: "/faqs",
+      // },
     ],
     [
+      // {
+      //   id: 1,
+      //   title: "Instructions",
+      //   url: "/instructions",
+      // },
       {
         id: 1,
-        title: "Instructions",
-        url: "/instructions",
-      },
-      {
-        id: 2,
         title: "Privacy Policy",
         url: "/privacy-policy",
       },
       {
-        id: 1,
+        id: 2,
         title: "License",
         url: "/license",
       },
       {
-        id: 1,
+        id: 3,
         title: "Terms & Condition",
         url: "/term&condition",
       },
     ],
   ],
 }
-// old data
-export const footerData = {
-  footerImage: "/icons/logo.svg",
-  newsLetter: {
-    heading: "Subscribe to Newsletter",
-  },
-  heading: "Bea You.",
-  description:
-    "Discover the beauty within with Beayou , be Beautiful You.It means you can wear the less makeup and let skin SHINE through.",
-  socialMedia: [
-    {
-      id: 1,
-      name: "facebook",
-      icon: Facebook,
-    },
-    {
-      id: 2,
-      name: "Twitter",
-      icon: Twitter,
-    },
-    {
-      id: 3,
-      name: "Instagram",
-      icon: Instagram,
-    },
-    {
-      id: 4,
-      name: "Linkedin",
-      icon: Linkedin,
-    },
-  ],
-  footerLinks: [
-    [
-      {
-        id: 1,
-        title: "Shop",
-        url: "/products",
-      },
-      {
-        id: 2,
-        title: "About us",
-        url: "/about-us",
-      },
 
-      {
-        id: 3,
-        title: "Contact us",
-        url: "/contact-us",
-      },
-    ],
-    [
-      {
-        id: 1,
-        title: "Support",
-        url: "/",
-      },
-      {
-        id: 2,
-        title: "Privacy Policy",
-        url: "/privacy-policy",
-      },
-      {
-        id: 3,
-        title: "Terms & Condition",
-        url: "/terms-and-conditions",
-      },
-    ],
-    [
-      {
-        id: 1,
-        title: "Cleanser",
-        url: `/products/cleanser`,
-      },
-      {
-        id: 2,
-        title: "Gluta Radiance",
-        url: "/products/gluta-radiance",
-      },
-    ],
-  ],
-  copyright: {
-    description: "Copyright ©2023. All Rights Reserved.",
-    developedBy: "Developed By The Special Character.",
-    links: [
-      {
-        id: 1,
-        title: "Terms & Conditions",
-        url: "/terms-and-conditions",
-      },
-      {
-        id: 2,
-        title: "Privacy Policy",
-        url: "/privacy-policy",
-      },
-    ],
-  },
-}
+// export const socialIcons = [
+//   {
+//     icon: Facebook,
+//     name: "facebook",
+//     link: "https://m.facebook.com/?wtsid=rdr_0hGHy1l132QhSpvyh",
+//   },
+//   {
+//     icon: Instagram,
+//     name: "instagram",
+//     link: "https://www.instagram.com/",
+//   },
+//   {
+//     icon: Pinterest,
+//     name: "pinterest",
+//     link: "https://www.pinterest.com.au/ideas/",
+//   },
+//   {
+//     icon: Twitter,
+//     name: "twitter",
+//     link: "https://twitter.com/",
+//   },
+// ]
 
 //-----------------------------SHOP SECTION---------------------------------------------//
 
@@ -1006,6 +879,39 @@ export const productReviews = [
 ]
 //-------------------------------------ABOUT US -------------------------------------------//
 
+export const aboutUsContent = [
+  {
+    id: 1,
+    title: "Welcome to SoleHub",
+    description: `At SoleHub, we believe that every step matters. Established with a passion for footwear and a commitment to style, comfort, and quality, we are your ultimate destination for all things shoes.`,
+  },
+  {
+    id: 2,
+    title: "Our Story",
+    description: `SoleHub was born out of a simple idea: to provide footwear enthusiasts with a curated collection of trendy, comfortable, and high-quality shoes at affordable prices. Founded by AKSA in 2023, our journey began with a vision to redefine the online shopping experience for shoe lovers everywhere.`,
+  },
+  {
+    id: 3,
+    title: "Our Mission",
+    description: `Our mission at SoleHub is to offer an unparalleled selection of footwear that caters to diverse tastes and preferences. We strive to empower individuals to express their unique style through our carefully curated range of shoes, from casual sneakers to elegant heels and everything in between.`,
+  },
+  {
+    id: 4,
+    title: "What Sets Us Apart",
+    description: `At SoleHub, we distinguish ourselves through our unwavering commitment to customer satisfaction. We go above and beyond to ensure that every customer receives personalized attention and finds the perfect pair of shoes to suit their needs. With a seamless shopping experience, prompt customer support, and fast shipping, we aim to exceed your expectations at every turn.`,
+  },
+  {
+    id: 5,
+    title: "Our Promise",
+    description: `When you shop at SoleHub, you can trust that you're investing in more than just a pair of shoes; you're investing in quality, comfort, and style that will accompany you on every step of your journey. We stand behind the craftsmanship of our products and are dedicated to providing you with footwear that not only looks good but also feels great.`,
+  },
+  {
+    id: 6,
+    title: "Join the SoleHub Community",
+    description: `We invite you to join our growing community of shoe enthusiasts and experience the SoleHub difference for yourself. Whether you're a sneakerhead, a fashionista, or simply someone who appreciates a great pair of shoes, we welcome you to explore our collection and find your perfect fit.`,
+  },
+]
+
 export const aboutUsPageBanner = {
   backgroundBannerImage: "/images/bannerImage.png",
   heading: "About Us",
@@ -1145,30 +1051,10 @@ export const cartTotal = {
 }
 //-----------------------------CATEGORY CARD--------------------------//
 export const categorydata = [
-  {
-    id: 1,
-    title: "Bath & body",
-    image: "/images/categorycard3.jpg",
-    link: "/products?category=Bath&body",
-  },
-  {
-    id: 2,
-    title: "Hair care",
-    image: "/images/categorycard1.jpg",
-    link: "/products?category=haircare",
-  },
-  {
-    id: 3,
-    title: "Skin Care",
-    image: "/images/categorycard2.jpg",
-    link: "/products?category=skincare",
-  },
-  {
-    id: 4,
-    title: "Spa",
-    image: "/images/categorycard4.png",
-    link: "/products?category=spa",
-  },
+  { id: 1, title: "Formal", image: "/images/categorycard1.jpeg" },
+  { id: 2, title: "Sneakers", image: "/images/categorycard2.avif" },
+  { id: 3, title: "Heels", image: "/images/categorycard3.jpeg" },
+  { id: 4, title: "Scandles", image: "/images/categorycard4.jpeg" },
 ]
 //------------------------------BLOGS----------------------------//
 export const Blogsdata = [

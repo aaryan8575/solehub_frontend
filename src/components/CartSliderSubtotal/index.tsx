@@ -14,17 +14,17 @@ const CartSliderSubtotal = (props: Props) => {
 
   if (items && items.length) {
     return (
-      <div className="flex flex-col gap-4">
-        {/* <div className="flex flex-col gap-4 pt-4 px-4">
-          <Button
+      <div className="flex flex-col pt-4 gap-4">
+        <div className="flex flex-col gap-4 px-4">
+          {/* <Button
             as="a"
             variant="outlined"
             href="/account/wishlist"
-            className="w-full"
+            className="w-full hover:bg-secondary"
           >
             Add item from wishlist
-          </Button>
-          <div className="flex justify-between items-center text-body2 font-semibold bg-white px-6 py-2 rounded-md">
+          </Button> */}
+          <div className="flex justify-between items-center text-body2 font-semibold border-y">
             <span>Total</span>
             <span>
               {cart &&
@@ -35,40 +35,31 @@ const CartSliderSubtotal = (props: Props) => {
                 })}
             </span>
           </div>
-          <p className="text-caption2 text-gray">
-          Shipping and taxes calculated at checkout.
-        </p>
-        </div> */}
-        {/* <Button
-          as="a"
-          href="/checkout"
-          variant="fill"
-          color="primary"
-          className="!rounded-xl"
-        >
-          <span className="sr-only">Checkout</span>
-          Checkout
-        </Button> */}
-        <div className="flex justify-between">
-          <div className="flex justify-between items-center text-body2 font-semibold bg-white px-6 py-2 w-full">
-            <span>Total</span>
-            <span>
-              {cart &&
-                formatAmount({
-                  amount: cart?.total || 0,
-                  region: cart?.region,
-                  includeTaxes: false,
-                })}
-            </span>
-          </div>
+          {/* <p>Shipping and taxes calculated at checkout.</p> */}
+          <p className="text-caption2">
+            Shipping and taxes calculated at checkout.
+          </p>
+        </div>
+
+        <div className="flex gap-2 px-2">
+          <Button
+            as="a"
+            href="/products"
+            variant="fill"
+            color="primary"
+            className="w-full py-2"
+          >
+            <span className="sr-only">Continue Shopping</span>
+            Continue Shopping
+          </Button>
           <Button
             as="a"
             href="/checkout"
             variant="fill"
             color="primary"
-            className="w-full !rounded-none py-2"
+            className="w-full py-2"
           >
-            Continue
+            Checkout
           </Button>
         </div>
       </div>

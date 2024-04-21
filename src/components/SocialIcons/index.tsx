@@ -1,25 +1,29 @@
-import FaceBook from "@/public/icons/fleurveda_facebook.svg"
-import Instagram from "@/public/icons/fleurveda_instagram.svg"
-import Pinterest from "@/public/icons/fleurveda_pinterest.svg"
-import Twitter from "@/public/icons/fleurveda_twitter.svg"
+import FaceBook from "@/public/icons/facebook.svg"
+import Instagram from "@/public/icons/instagram.svg"
+import Pinterest from "@/public/icons/pinterest.svg"
+import Twitter from "@/public/icons/twitter.svg"
 
 type Props = {}
 
 const socialIcons = [
   {
     icon: <FaceBook />,
+    name: "facebook",
     link: "https://m.facebook.com/?wtsid=rdr_0hGHy1l132QhSpvyh",
   },
   {
     icon: <Instagram />,
+    name: "instagram",
     link: "https://www.instagram.com/",
   },
   {
     icon: <Pinterest />,
+    name: "pinterest",
     link: "https://www.pinterest.com.au/ideas/",
   },
   {
     icon: <Twitter />,
+    name: "twitter",
     link: "https://twitter.com/",
   },
 ]
@@ -30,9 +34,12 @@ const SocialIcons = (props: Props) => {
       <div className="flex gap-2">
         {socialIcons.map((item) => {
           return (
-            <a key={item.link} href={item.link}>
-              {item.icon}
-            </a>
+            <>
+              <span className="sr-only">{item.name} account button</span>
+              <a key={item.link} href={item.link}>
+                {item.icon}
+              </a>
+            </>
           )
         })}
       </div>

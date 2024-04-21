@@ -12,7 +12,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 // import "swiper/css/navigation"
 
-const Banner = ({ data }: BannerPropsType) => {
+const Banner = ({ data }: { data: any }) => {
   return (
     <>
       <Swiper
@@ -20,9 +20,11 @@ const Banner = ({ data }: BannerPropsType) => {
         loop={true}
         modules={[Pagination]}
         pagination={true}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
         className="h-[calc(100vh-64px)] lg:h-[calc(100vh-128px)]"
       >
-        {data.map((item) => {
+        {data.map((item: any) => {
           return (
             // <SwiperSlide> <div>sliddde</div> </SwiperSlide>
             <SwiperSlide key={item.id}>

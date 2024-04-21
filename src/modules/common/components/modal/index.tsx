@@ -60,10 +60,11 @@ const Modal: React.FC<ModalProps> & {
             >
               <Dialog.Panel
                 className={clsx(
-                  "flex transform text-left text-base transition overflow-scroll no-scrollbar rounded-xl sm:my-4",
+                  "flex transform text-left text-base transition overflow-scroll no-scrollbar rounded-xl",
                   {
-                    // ["max-sm:w-screen h-screen bg-white "]: type === "full",
-                    // ["w-max max-w-[90vw] max-h-[85vh] h-fit"]: type !== "full",
+                    ["w-screen sm:w-max max-sm:min-h-screen sm:max-h-[85vh] sm:h-fit"]:
+                      type === "full",
+                    ["w-max max-w-[90vw] max-h-[85vh] h-fit"]: type !== "full",
                     // "max-w-md": size === "small",
                     // "max-w-xl": size === "medium",
                     // "max-w-3xl": size === "large",
@@ -72,18 +73,10 @@ const Modal: React.FC<ModalProps> & {
                   }
                 )}
               >
-                {/* <div className="relative w-full h-full bg-white px-4 pb-8 pt-10 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8 "> */}
-                <div
-                  className={clsx(
-                    "relative w-full bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8",
-                    {
-                      "max-sm:w-screen max-sm:min-h-screen": type === "full",
-                    }
-                  )}
-                >
+                <div className="relative w-full h-full bg-white px-4 pb-8 pt-10 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8 ">
                   <button
                     type="button"
-                    className="fixed right-4 top-4"
+                    className="absolute right-4 top-4"
                     onClick={close}
                   >
                     <span className="sr-only">Close Modal button</span>

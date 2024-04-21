@@ -1,21 +1,14 @@
-import Blogs from "@/containers/BlogSection"
 import CategoryCard from "@/components/CategoryCard"
 import NewsLetter from "@/components/NewsLetter"
 import HomeBanner from "@/containers/HomeBanner"
-import OurProduct from "@/containers/OurProduct"
 import ProductsGrid from "@/containers/ProductsGrid"
 import TestimonialCarousel from "@/containers/TestimonialCarousel"
 import WhyChooseOurProduct from "@/containers/WhyChooseOurProduct"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Fleurveda",
-  description: "Fleurveda",
-  // description:
-  //   "High-performance ecommerce store built with Next.js, Vercel, and Medusa.",
-  // openGraph: {
-  //   type: "website",
-  // },
+  title: "Solehub",
+  description: "Solehub",
 }
 
 export default async function Home() {
@@ -23,12 +16,12 @@ export default async function Home() {
     <>
       <HomeBanner />
       <CategoryCard />
-      <OurProduct />
+      {/* <OurProduct /> */}
       <ProductsGrid />
       <WhyChooseOurProduct />
       <TestimonialCarousel />
       <NewsLetter />
-      <Blogs />
+      {/* <Blogs /> */}
     </>
   )
 }

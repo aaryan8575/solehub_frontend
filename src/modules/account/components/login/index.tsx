@@ -1,6 +1,5 @@
 import Button from "@/components/common/Button"
 import Input from "@/components/common/formElements/Input"
-import Fleurveda from "@/public/icons/FleurvedaLogo.svg"
 import { medusaClient } from "@/lib/config"
 import { LOGIN_VIEW, useAccount } from "@/lib/context/account-context"
 import { emailRegex } from "@/lib/util/regex"
@@ -13,7 +12,7 @@ import {
   useState,
 } from "react"
 import { FieldValues, useForm } from "react-hook-form"
-import Modal from "@/modules/common/components/modal"
+import Logo from "@/public/icons/SolehubLogo.svg"
 
 interface SignInCredentials extends FieldValues {
   email: string
@@ -70,7 +69,7 @@ const Login = ({ query }: { query: string }) => {
   })
 
   return (
-    <div className="max-w-sm w-full flex flex-col gap-2 items-center ">
+    <div className="max-w-sm w-full flex flex-col gap-4 items-center">
       <a href="/account" ref={linkRef} aria-hidden />
       {isSubmitting && (
         <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
@@ -78,7 +77,7 @@ const Login = ({ query }: { query: string }) => {
         </div>
       )}
       <div className="flex justify-center">
-        <Fleurveda className="h-16" />
+        <Logo className="h-12 text-primary" />
       </div>
       <div className="flex flex-col gap-2 items-center">
         <p className="text-heading4 font-bold">Welcome back</p>
@@ -131,8 +130,7 @@ const Login = ({ query }: { query: string }) => {
       <span className="text-center text-gray-700 text-small-regular mt-6">
         Dont&apos;t have an account?{" "}
         <button
-          // onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
-          onClick={() => router.replace("/register")}
+          onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
           className="text-primary"
         >
           Sign up here

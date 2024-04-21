@@ -12,11 +12,13 @@
 @layer base {
   :root {
     /* new colors */
-    --color-primary: 201 71 38;
-    --color-secondary: 255 238 216;
-    --color-gold: 211 186 52;
+    --color-primary: 25 55 131;
+    --color-secondary: 151 189 231;
+    --color-footblack: 0 0 0;
     --color-floral-white: 255 251 242;
     --color-skin: 255 220 175;
+    --color-red: 255 0 0;
+    --color-gold: 211 186 52;
 
     /* old colors */
     --color-green: 59 93 80;
@@ -44,9 +46,8 @@
   }
 
   body {
-    @apply font-sans overflow-x-hidden text-black bg-floralWhite;
+    @apply font-sans overflow-x-hidden;
   }
-
   /* ------------ typography starts ------------ */
   h1,
   h2,
@@ -150,7 +151,7 @@
   --swiper-pagination-color: rgba(var(--color-primary));
 }
 .swiper-custom-navigation-btn {
-  @apply max-sm:hidden absolute z-10 top-1/2 w-14 aspect-square bg-primary rounded-full text-white hover:bg-white hover:text-primary duration-300 flex justify-center items-center cursor-pointer;
+  @apply max-sm:hidden absolute z-10 top-1/2 w-14 aspect-square hover:bg-primary bg-opacity-100 rounded-full hover:text-white bg-secondary text-primary duration-300 flex justify-center items-center cursor-pointer;
 }
 /* ------------------- swiper ends ------------------- */
 

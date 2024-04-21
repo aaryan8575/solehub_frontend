@@ -35,11 +35,11 @@ const SidePanel = ({ children, side = "left" }: Props) => {
           >
             <Dialog.Panel
               className={clsx("pointer-events-auto w-screen ", {
-                "max-w-2xl max-sm:max-w-full": ["left", "right"].includes(side),
+                "max-w-md max-sm:max-w-full": ["left", "right"].includes(side),
                 "max-h-max": ["top", "bottom"].includes(side),
               })}
             >
-              <div className="flex flex-col bg-secondary h-[100dvh] shadow-xl overflow-y-auto no-scrollbar">
+              <div className="flex flex-col bg-white h-[100dvh] shadow-xl overflow-y-auto no-scrollbar">
                 <div className="flex items-center justify-between py-2 px-4 border-b border-gray">
                   <Dialog.Title className="text-heading6 font-medium text-gray-900">
                     Bag

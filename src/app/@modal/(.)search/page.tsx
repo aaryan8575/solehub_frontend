@@ -128,10 +128,10 @@ const Page = () => {
                       <ProductProvider product={item} key={item.id}>
                         <ProductCard
                           product={item}
-                          color={
-                            cardColorVarients[index % cardColorVarients.length]
-                          }
-                          detailsBG="white"
+                          // color={
+                          //   cardColorVarients[index % cardColorVarients.length]
+                          // }
+                          // detailsBG="white"
                         />
                       </ProductProvider>
                     </Combobox.Option>
