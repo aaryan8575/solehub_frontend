@@ -251,7 +251,7 @@ const AddAddress: React.FC = () => {
             <Button
               variant="fill"
               color="primary"
-              className="min-h-0 bg-green text-white px-2 py-1 rounded-lg"
+              className="min-h-0 bg-primary text-white px-2 py-1 rounded-lg"
               onClick={submit}
               disabled={submitting}
               isLoading={submitting}

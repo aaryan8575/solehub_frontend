@@ -309,8 +309,8 @@ const EditAddress: React.FC<EditAddressProps> = ({
         <Modal.Footer>
           <div className="flex gap-3 mt-4">
             <Button
-              variant="fill"
-              color="green"
+              variant="outlined"
+              color="dark"
               onClick={close}
               disabled={submitting}
             >
@@ -318,7 +318,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
             </Button>
             <Button
               variant="fill"
-              color="green"
+              color="primary"
               onClick={submit}
               disabled={submitting}
               isLoading={submitting}
